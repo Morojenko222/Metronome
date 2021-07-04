@@ -19,6 +19,7 @@
 		5AA669B82683CEE800CF4BF9 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA669B72683CEE800CF4BF9 /* 1.png */; };
 		5AA669BA268A5AD300CF4BF9 /* TempoBtns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669B9268A5AD300CF4BF9 /* TempoBtns.swift */; };
 		5AA669BC268CFF9500CF4BF9 /* SizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669BB268CFF9500CF4BF9 /* SizeViewController.swift */; };
+		5AA669C22692593500CF4BF9 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C12692593500CF4BF9 /* DataContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		5AA669B72683CEE800CF4BF9 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		5AA669B9268A5AD300CF4BF9 /* TempoBtns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoBtns.swift; sourceTree = "<group>"; };
 		5AA669BB268CFF9500CF4BF9 /* SizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeViewController.swift; sourceTree = "<group>"; };
+		5AA669C12692593500CF4BF9 /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				5AA6699C2683B92600CF4BF9 /* MainController.swift */,
 				5AA669B9268A5AD300CF4BF9 /* TempoBtns.swift */,
 				5AA669BB268CFF9500CF4BF9 /* SizeViewController.swift */,
+				5AA669C12692593500CF4BF9 /* DataContainer.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			files = (
 				5AA669A32683B92600CF4BF9 /* Metronome.xcdatamodeld in Sources */,
 				5AA6699D2683B92600CF4BF9 /* MainController.swift in Sources */,
+				5AA669C22692593500CF4BF9 /* DataContainer.swift in Sources */,
 				5AA669992683B92600CF4BF9 /* AppDelegate.swift in Sources */,
 				5AA669BC268CFF9500CF4BF9 /* SizeViewController.swift in Sources */,
 				5AA669BA268A5AD300CF4BF9 /* TempoBtns.swift in Sources */,

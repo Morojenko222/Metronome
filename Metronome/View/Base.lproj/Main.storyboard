@@ -288,6 +288,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J6E-4G-Ym9"/>
+                        <color key="backgroundColor" red="0.26594288219123197" green="0.26706777449302327" blue="0.27044245139839718" alpha="0.70133878746811229" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Q4c-Pc-z5X"/>
                     <connections>

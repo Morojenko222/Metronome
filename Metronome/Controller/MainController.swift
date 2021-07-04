@@ -26,11 +26,13 @@ class MainController: UIViewController {
     @IBOutlet var minusOneTempoBtn: TempoBtns!
     @IBOutlet var plusOneTempoBtn: TempoBtns!
     @IBOutlet var plusTenTempoBtn: TempoBtns!
+    @IBOutlet var sizeBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tempoLabel.text = String(INIT_TEMPO)
         initController ()
+        setupGestures()
     }
     
     private func initController ()
@@ -42,6 +44,35 @@ class MainController: UIViewController {
         
         playerHighSound = getAudioPlayer(soundName: "met1", soundExt: "wav")
         playerLowSound = getAudioPlayer(soundName: "met2", soundExt: "wav")
+    }
+    
+    private func setupGestures ()
+    {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        tap.numberOfTapsRequired = 1
+        sizeBtn.addGestureRecognizer(tap)
+    }
+    
+    @objc
+    private func tapped()
+    {
+        guard let sizeVC = storyboard?.instantiateViewController(identifier: "sizeVC") else {
+            print("Error, can't create sizeVC")
+            return
+        }
+        
+        sizeVC.modalPresentationStyle = .custom
+        sizeVC.modalTransitionStyle = .crossDissolve
+        /*
+        let popOverVC = sizeVC.popoverPresentationController
+        popOverVC?.delegate = self
+        //popOverVC?.sourceView = self.sizeBtn
+        popOverVC?.sourceRect = CGRect(x: self.sizeBtn.bounds.midX, y: self.sizeBtn.bounds.minY, width: 0, height: 0)
+         */
+        sizeVC.preferredContentSize = CGSize(width: 250, height: 250)
+
+        
+        self.present(sizeVC, animated: true)
     }
 
     private func startMetronome ()

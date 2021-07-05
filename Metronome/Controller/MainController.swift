@@ -16,6 +16,7 @@ class MainController: UIViewController {
     private var beepTime = 60
     private let INIT_TEMPO = 60
     private var needToUpdateTimer = false
+    private var timerStarted = false
     private var currentStrokeNum = 0
     
     private var playerHighSound : AVAudioPlayer!
@@ -49,13 +50,13 @@ class MainController: UIViewController {
     
     private func setupGestures ()
     {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(changeFirstSize))
         tap.numberOfTapsRequired = 1
         sizeBtn.addGestureRecognizer(tap)
     }
     
     @objc
-    private func tapped()
+    private func changeFirstSize()
     {
         guard let sizeVC = storyboard?.instantiateViewController(identifier: "sizeVC") else {
             print("Error, can't create sizeVC")
@@ -64,15 +65,8 @@ class MainController: UIViewController {
         
         sizeVC.modalPresentationStyle = .custom
         sizeVC.modalTransitionStyle = .crossDissolve
-        /*
-        let popOverVC = sizeVC.popoverPresentationController
-        popOverVC?.delegate = self
-        //popOverVC?.sourceView = self.sizeBtn
-        popOverVC?.sourceRect = CGRect(x: self.sizeBtn.bounds.midX, y: self.sizeBtn.bounds.minY, width: 0, height: 0)
-         */
         sizeVC.preferredContentSize = CGSize(width: 250, height: 250)
         (sizeVC as! SizeViewController).senderViewController = self
-
         
         self.present(sizeVC, animated: true)
     }
@@ -80,15 +74,16 @@ class MainController: UIViewController {
     private func startMetronome ()
     {
         timer.invalidate()
-        print("HighStroke = \(highStrokeNum)")
-        updateTimer()
-    }
-    
-    private func StartTimer ()
-    {
-        timer.invalidate()
         playSound ()
         updateTimer()
+        timerStarted = true
+    }
+    
+    private func stopMetronome ()
+    {
+        timer.invalidate()
+        currentStrokeNum = 0
+        timerStarted = false
     }
     
     private func updateTimer ()
@@ -151,14 +146,15 @@ class MainController: UIViewController {
         return player
     }
     
-    @IBAction func onStepperChange(_ sender: UIStepper) {
-        let val = Int(sender.value)
-        tempoLabel.text = String(val)
-        beepTime = val
-    }
-    
     @IBAction func onStartBtnPress(_ sender: UIButton) {
-        startMetronome ()
+        if (!timerStarted)
+        {
+            startMetronome ()
+        }
+        else
+        {
+            stopMetronome()
+        }
     }
     
     @IBAction func onTempoBtnPress(_ sender: TempoBtns) {

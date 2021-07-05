@@ -13,6 +13,7 @@ class SizeViewController: UIViewController {
     
     let dataContainer = DataContainer.Instance
     var activeData = [Int]()
+    var senderViewController : MainController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +29,9 @@ class SizeViewController: UIViewController {
 extension SizeViewController : UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Cell name = \(dataContainer.sizeData_1[indexPath.row])")
         tableView.deselectRow(at: indexPath, animated: true)
+        senderViewController?.highStrokeNum = activeData[indexPath.row]
+        dismiss(animated: true)
     }
 }
 

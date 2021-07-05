@@ -10,11 +10,12 @@ import AVFoundation
 
 class MainController: UIViewController {
 
+    public var highStrokeNum = 4
+    
     private var timer = Timer()
     private var beepTime = 60
     private let INIT_TEMPO = 60
     private var needToUpdateTimer = false
-    private var highStrokeNum = 4
     private var currentStrokeNum = 0
     
     private var playerHighSound : AVAudioPlayer!
@@ -70,6 +71,7 @@ class MainController: UIViewController {
         popOverVC?.sourceRect = CGRect(x: self.sizeBtn.bounds.midX, y: self.sizeBtn.bounds.minY, width: 0, height: 0)
          */
         sizeVC.preferredContentSize = CGSize(width: 250, height: 250)
+        (sizeVC as! SizeViewController).senderViewController = self
 
         
         self.present(sizeVC, animated: true)
@@ -78,6 +80,7 @@ class MainController: UIViewController {
     private func startMetronome ()
     {
         timer.invalidate()
+        print("HighStroke = \(highStrokeNum)")
         updateTimer()
     }
     

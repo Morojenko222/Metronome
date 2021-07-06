@@ -10,10 +10,12 @@ import UIKit
 class SizeViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var backgroundView: UIView!
+    @IBOutlet var sizeTableView: UITableView!
     
-    let dataContainer = DataContainer.Instance
     var activeData = [Int]()
     var metronomeLogic : MetronomeLogic?
+    private let dataContainer = DataContainer.Instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,26 @@ class SizeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        setupGestures ()
+    }
+    
+    private func setupGestures ()
+    {
+        // Dismiss on background press
+        let tap = UITapGestureRecognizer(target: self, action: #selector(goBack))
+        tap.numberOfTapsRequired = 1
+        tap.cancelsTouchesInView = false;
+        tap.delegate = self
+        backgroundView.addGestureRecognizer(tap)
+        
+        // Blocking passing taps
+        //let emptyTap = UITapGestureRecognizer()
+        //sizeTableView.addGestureRecognizer(emptyTap)
+    }
+    
+    @objc private func goBack ()
+    {
+        dismiss(animated: true)
     }
 }
 
@@ -43,5 +65,12 @@ extension SizeViewController : UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "SizeCell", for: indexPath)
         cell.textLabel?.text = String(activeData[indexPath.row])
         return cell
+    }
+}
+
+extension SizeViewController : UIGestureRecognizerDelegate
+{
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return touch.view == backgroundView
     }
 }

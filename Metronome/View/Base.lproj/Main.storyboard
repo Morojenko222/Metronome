@@ -313,6 +313,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Q4c-Pc-z5X"/>
                     <connections>
+                        <outlet property="backgroundView" destination="ms1-Au-GCk" id="lFz-nY-RgO"/>
+                        <outlet property="sizeTableView" destination="ukD-HU-3qJ" id="JWK-wp-Ze9"/>
                         <outlet property="tableView" destination="ukD-HU-3qJ" id="1uG-Ep-nIM"/>
                     </connections>
                 </viewController>

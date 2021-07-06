@@ -35,7 +35,7 @@ class MainController: UIViewController {
         plusTenTempoBtn.tempo = 10
     }
     
-    func setupGestures ()
+    private func setupGestures ()
     {
         let tap_1 = MyTapGesture(target: self, action: #selector(changeSize))
         tap_1.numberOfTapsRequired = 1
@@ -49,13 +49,17 @@ class MainController: UIViewController {
     }
     
     @objc
-    func changeSize(sender : MyTapGesture)
+    private func changeSize(sender : MyTapGesture)
     {
+        if (sender.state != .ended)
+        {
+            return
+        }
+        
         guard let sizeVC = storyboard?.instantiateViewController(identifier: "sizeVC") else {
             print("Error, can't create sizeVC")
             return
         }
-        print("Sender = \(sender.strParam)")
         
         let sizeVC_Casted = (sizeVC as! SizeViewController)
         sizeVC_Casted.modalPresentationStyle = .custom

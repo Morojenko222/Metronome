@@ -20,6 +20,7 @@
 		5AA669BA268A5AD300CF4BF9 /* TempoBtns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669B9268A5AD300CF4BF9 /* TempoBtns.swift */; };
 		5AA669BC268CFF9500CF4BF9 /* SizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669BB268CFF9500CF4BF9 /* SizeViewController.swift */; };
 		5AA669C22692593500CF4BF9 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C12692593500CF4BF9 /* DataContainer.swift */; };
+		5AA669C42694D19A00CF4BF9 /* MetronomeLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C32694D19A00CF4BF9 /* MetronomeLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		5AA669B9268A5AD300CF4BF9 /* TempoBtns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoBtns.swift; sourceTree = "<group>"; };
 		5AA669BB268CFF9500CF4BF9 /* SizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeViewController.swift; sourceTree = "<group>"; };
 		5AA669C12692593500CF4BF9 /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
+		5AA669C32694D19A00CF4BF9 /* MetronomeLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,9 @@
 		5AA669AF2683BA7300CF4BF9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5AA669B9268A5AD300CF4BF9 /* TempoBtns.swift */,
+				5AA669C12692593500CF4BF9 /* DataContainer.swift */,
+				5AA669C32694D19A00CF4BF9 /* MetronomeLogic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -104,9 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				5AA6699C2683B92600CF4BF9 /* MainController.swift */,
-				5AA669B9268A5AD300CF4BF9 /* TempoBtns.swift */,
 				5AA669BB268CFF9500CF4BF9 /* SizeViewController.swift */,
-				5AA669C12692593500CF4BF9 /* DataContainer.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				5AA669A32683B92600CF4BF9 /* Metronome.xcdatamodeld in Sources */,
 				5AA6699D2683B92600CF4BF9 /* MainController.swift in Sources */,
 				5AA669C22692593500CF4BF9 /* DataContainer.swift in Sources */,
+				5AA669C42694D19A00CF4BF9 /* MetronomeLogic.swift in Sources */,
 				5AA669992683B92600CF4BF9 /* AppDelegate.swift in Sources */,
 				5AA669BC268CFF9500CF4BF9 /* SizeViewController.swift in Sources */,
 				5AA669BA268A5AD300CF4BF9 /* TempoBtns.swift in Sources */,

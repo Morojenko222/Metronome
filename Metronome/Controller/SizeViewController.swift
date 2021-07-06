@@ -13,7 +13,7 @@ class SizeViewController: UIViewController {
     
     let dataContainer = DataContainer.Instance
     var activeData = [Int]()
-    var senderViewController : MainController?
+    var metronomeLogic : MetronomeLogic?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,6 @@ class SizeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-        print("DidLoad")
         activeData = dataContainer.sizeData_1
     }
 }
@@ -30,7 +29,7 @@ extension SizeViewController : UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        senderViewController?.highStrokeNum = activeData[indexPath.row]
+        metronomeLogic?.highStrokeNum = activeData[indexPath.row]
         dismiss(animated: true)
     }
 }
@@ -45,6 +44,5 @@ extension SizeViewController : UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "SizeCell", for: indexPath)
         cell.textLabel?.text = String(activeData[indexPath.row])
         return cell
-        
     }
 }

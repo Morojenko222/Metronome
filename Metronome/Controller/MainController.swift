@@ -18,6 +18,7 @@ class MainController: UIViewController {
     @IBOutlet var plusOneTempoBtn: TempoBtns!
     @IBOutlet var plusTenTempoBtn: TempoBtns!
     @IBOutlet var sizeBtn: UIButton!
+    @IBOutlet var size_2Btn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,26 +35,44 @@ class MainController: UIViewController {
         plusTenTempoBtn.tempo = 10
     }
     
-    private func setupGestures ()
+    func setupGestures ()
     {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(changeFirstSize))
-        tap.numberOfTapsRequired = 1
-        sizeBtn.addGestureRecognizer(tap)
+        let tap_1 = MyTapGesture(target: self, action: #selector(changeSize))
+        tap_1.numberOfTapsRequired = 1
+        tap_1.strParam = "FirstSize"
+        sizeBtn.addGestureRecognizer(tap_1)
+        
+        let tap_2 = MyTapGesture(target: self, action: #selector(changeSize))
+        tap_2.numberOfTapsRequired = 1
+        tap_2.strParam = "SecondSize"
+        size_2Btn.addGestureRecognizer(tap_2)
     }
     
     @objc
-    private func changeFirstSize()
+    func changeSize(sender : MyTapGesture)
     {
         guard let sizeVC = storyboard?.instantiateViewController(identifier: "sizeVC") else {
             print("Error, can't create sizeVC")
             return
         }
+        print("Sender = \(sender.strParam)")
         
-        let sazeVC_Casted = (sizeVC as! SizeViewController)
-        sazeVC_Casted.modalPresentationStyle = .custom
-        sazeVC_Casted.modalTransitionStyle = .crossDissolve
-        sazeVC_Casted.preferredContentSize = CGSize(width: 250, height: 250)
-        sazeVC_Casted.metronomeLogic = metronomeLogic
+        let sizeVC_Casted = (sizeVC as! SizeViewController)
+        sizeVC_Casted.modalPresentationStyle = .custom
+        sizeVC_Casted.modalTransitionStyle = .crossDissolve
+        sizeVC_Casted.preferredContentSize = CGSize(width: 250, height: 250)
+        sizeVC_Casted.metronomeLogic = metronomeLogic
+        
+        switch sender.strParam {
+        case "FirstSize":
+            sizeVC_Casted.activeData = DataContainer.Instance.sizeData_1
+            break
+        case "SecondSize":
+            sizeVC_Casted.activeData = DataContainer.Instance.sizeData_2
+            break
+        default:
+            sizeVC_Casted.activeData = DataContainer.Instance.sizeData_1
+        }
         
         self.present(sizeVC, animated: true)
     }

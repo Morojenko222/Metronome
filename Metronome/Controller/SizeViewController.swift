@@ -21,7 +21,6 @@ class SizeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-        activeData = dataContainer.sizeData_1
     }
 }
 

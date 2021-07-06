@@ -169,23 +169,6 @@
                                     <constraint firstItem="aQQ-DF-jiW" firstAttribute="top" secondItem="qFZ-sO-jxZ" secondAttribute="top" id="pFv-LZ-iXK"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EpD-2X-xsv" userLabel="TempoView">
-                                <rect key="frame" x="87" y="145" width="240" height="100"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNg-5c-Vv9">
-                                        <rect key="frame" x="76.5" y="32" width="87.5" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="HNg-5c-Vv9" firstAttribute="centerY" secondItem="EpD-2X-xsv" secondAttribute="centerY" id="IPn-bh-8o8"/>
-                                    <constraint firstItem="HNg-5c-Vv9" firstAttribute="centerX" secondItem="EpD-2X-xsv" secondAttribute="centerX" id="YiH-R9-g3h"/>
-                                    <constraint firstAttribute="height" constant="100" id="t5R-jg-vK1"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vas-bA-ant" userLabel="PlayBtnView">
                                 <rect key="frame" x="123.5" y="342" width="167" height="74"/>
                                 <subviews>
@@ -207,12 +190,29 @@
                                     <constraint firstAttribute="trailing" secondItem="0KA-Ro-KQM" secondAttribute="trailing" id="tLK-Fp-ola"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EpD-2X-xsv" userLabel="TempoView">
+                                <rect key="frame" x="87" y="145" width="240" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNg-5c-Vv9">
+                                        <rect key="frame" x="76.5" y="32" width="87.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="HNg-5c-Vv9" firstAttribute="centerY" secondItem="EpD-2X-xsv" secondAttribute="centerY" id="IPn-bh-8o8"/>
+                                    <constraint firstItem="HNg-5c-Vv9" firstAttribute="centerX" secondItem="EpD-2X-xsv" secondAttribute="centerX" id="YiH-R9-g3h"/>
+                                    <constraint firstAttribute="height" constant="100" id="t5R-jg-vK1"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SRe-7l-tWP" userLabel="FirstSizeBtnView">
                                 <rect key="frame" x="69" y="437" width="86" height="74"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVR-KW-Cez" userLabel="Size">
                                         <rect key="frame" x="0.0" y="0.0" width="86" height="74"/>
-                                        <state key="normal" title="Size"/>
+                                        <state key="normal" title="Size_1"/>
                                         <connections>
                                             <action selector="onStartBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5dW-zF-Qe0"/>
                                             <segue destination="Cmt-NM-2el" kind="show" id="eKt-co-ej7"/>
@@ -229,12 +229,31 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="86" id="fcS-FV-yML"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUc-g8-hdd" userLabel="SecondSizeBtnView">
+                                <rect key="frame" x="269" y="437" width="86" height="74"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jes-Qn-rE1" userLabel="Size">
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Size_2"/>
+                                        <connections>
+                                            <action selector="onStartBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TP4-V6-MXa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="6Nd-Ac-M8v"/>
+                                    <constraint firstAttribute="height" constant="74" id="tV8-kJ-ZCK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rXN-Zw-AAZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4Td-00-kme"/>
                             <constraint firstItem="qFZ-sO-jxZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Zv-Ih-1DK"/>
+                            <constraint firstItem="EUc-g8-hdd" firstAttribute="top" secondItem="Vas-bA-ant" secondAttribute="bottom" constant="21" id="Fqt-g5-AQu"/>
                             <constraint firstItem="EpD-2X-xsv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="101" id="GWU-jc-vFq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rXN-Zw-AAZ" secondAttribute="trailing" id="Lmt-CN-y1S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EpD-2X-xsv" secondAttribute="trailing" constant="87" id="N1r-dT-r8H"/>
@@ -244,6 +263,7 @@
                             <constraint firstItem="SRe-7l-tWP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="393" id="UDB-On-iQe"/>
                             <constraint firstItem="Vas-bA-ant" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="298" id="aZh-CF-gyc"/>
                             <constraint firstItem="rXN-Zw-AAZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ayV-2H-sP9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EUc-g8-hdd" secondAttribute="trailing" constant="59" id="bSt-eE-e6n"/>
                             <constraint firstAttribute="bottom" secondItem="rXN-Zw-AAZ" secondAttribute="bottom" id="dkf-e3-BHw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EpD-2X-xsv" secondAttribute="trailing" constant="87" id="eMk-0D-E7T"/>
                             <constraint firstItem="EpD-2X-xsv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="gAr-O2-VJT"/>
@@ -256,6 +276,7 @@
                         <outlet property="plusOneTempoBtn" destination="Pmd-4U-f0j" id="LeN-9Z-A46"/>
                         <outlet property="plusTenTempoBtn" destination="Meq-ZE-gLN" id="HTJ-op-jBg"/>
                         <outlet property="sizeBtn" destination="aVR-KW-Cez" id="vuV-g9-np8"/>
+                        <outlet property="size_2Btn" destination="jes-Qn-rE1" id="dth-X1-9g3"/>
                         <outlet property="tempoLabel" destination="HNg-5c-Vv9" id="yrQ-Cm-nvv"/>
                     </connections>
                 </viewController>

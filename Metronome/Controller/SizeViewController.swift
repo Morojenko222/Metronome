@@ -34,10 +34,6 @@ class SizeViewController: UIViewController {
         tap.cancelsTouchesInView = false;
         tap.delegate = self
         backgroundView.addGestureRecognizer(tap)
-        
-        // Blocking passing taps
-        //let emptyTap = UITapGestureRecognizer()
-        //sizeTableView.addGestureRecognizer(emptyTap)
     }
     
     @objc private func goBack ()

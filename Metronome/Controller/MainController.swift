@@ -19,12 +19,16 @@ class MainController: UIViewController {
     @IBOutlet var plusTenTempoBtn: TempoBtns!
     @IBOutlet var sizeBtn: UIButton!
     @IBOutlet var size_2Btn: UIButton!
+    @IBOutlet var notesStackView: UIStackView!
     
+    private var notesBtns : [ButtonWithParam]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tempoLabel.text = String(metronomeLogic.INIT_TEMPO)
         initController ()
         setupGestures()
+        setupNoteButtons()
     }
     
     private func initController ()
@@ -46,6 +50,25 @@ class MainController: UIViewController {
         tap_2.numberOfTapsRequired = 1
         tap_2.strParam = "SecondSize"
         size_2Btn.addGestureRecognizer(tap_2)
+    }
+    
+    private func setupNoteButtons ()
+    {
+        var btnsArray = [ButtonWithParam]()
+        for subview in notesStackView.subviews {
+                for subUiView in subview.subviews {
+                    if let buttonView = subUiView as? ButtonWithParam
+                    {
+                        btnsArray.append(buttonView)
+                    }
+                }
+        }
+        
+        print("BtnCount = \(btnsArray.count)")
+        for i in 0 ..< btnsArray.count {
+            btnsArray[i].param = String(i)
+            btnsArray[i].addTarget(self, action: #selector(onNoteBtnPress), for: .touchDown)
+        }
     }
     
     @objc
@@ -94,5 +117,10 @@ class MainController: UIViewController {
     @IBAction func onTempoBtnPress(_ sender: TempoBtns) {
         metronomeLogic.beepTime += sender.tempo
         updateTempoView ()
+    }
+    
+    @objc func onNoteBtnPress (_ sender: ButtonWithParam)
+    {
+        print ("Test done - \(sender.param)")
     }
 }

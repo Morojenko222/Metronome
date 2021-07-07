@@ -214,7 +214,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="86" height="74"/>
                                         <state key="normal" title="Size_1"/>
                                         <connections>
-                                            <action selector="onStartBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5dW-zF-Qe0"/>
                                             <segue destination="Cmt-NM-2el" kind="show" id="eKt-co-ej7"/>
                                         </connections>
                                     </button>
@@ -232,25 +231,144 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUc-g8-hdd" userLabel="SecondSizeBtnView">
                                 <rect key="frame" x="269" y="437" width="86" height="74"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jes-Qn-rE1" userLabel="Size">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jes-Qn-rE1" userLabel="Size">
                                         <rect key="frame" x="0.0" y="0.0" width="86" height="74"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Size_2"/>
-                                        <connections>
-                                            <action selector="onStartBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TP4-V6-MXa"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="jes-Qn-rE1" firstAttribute="top" secondItem="EUc-g8-hdd" secondAttribute="top" id="01D-H4-E4a"/>
                                     <constraint firstAttribute="width" constant="86" id="6Nd-Ac-M8v"/>
+                                    <constraint firstAttribute="trailing" secondItem="jes-Qn-rE1" secondAttribute="trailing" id="RiO-ib-7l0"/>
+                                    <constraint firstAttribute="bottom" secondItem="jes-Qn-rE1" secondAttribute="bottom" id="ZYz-QR-rni"/>
+                                    <constraint firstItem="jes-Qn-rE1" firstAttribute="leading" secondItem="EUc-g8-hdd" secondAttribute="leading" id="i85-i3-MyU"/>
                                     <constraint firstAttribute="height" constant="74" id="tV8-kJ-ZCK"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwy-m5-U0P" userLabel="NotesBlock">
+                                <rect key="frame" x="69" y="519" width="286" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jUy-Xu-vA7">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="80"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xpp-J7-T6M" userLabel="NoteBtnView">
+                                                <rect key="frame" x="0.0" y="0.0" width="68" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEu-So-Ve1" userLabel="NoteBtn" customClass="ButtonWithParam" customModule="Metronome" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="80"/>
+                                                        <state key="normal" image="tempoBtn"/>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music.note" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Tge-Ep-cCN" userLabel="Background">
+                                                        <rect key="frame" x="0.0" y="0.5" width="68" height="79"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="sEu-So-Ve1" secondAttribute="bottom" id="J2d-9O-jts"/>
+                                                    <constraint firstItem="sEu-So-Ve1" firstAttribute="top" secondItem="Xpp-J7-T6M" secondAttribute="top" id="XXF-Me-5Hm"/>
+                                                    <constraint firstItem="Tge-Ep-cCN" firstAttribute="leading" secondItem="Xpp-J7-T6M" secondAttribute="leading" id="any-xY-Cda"/>
+                                                    <constraint firstItem="Tge-Ep-cCN" firstAttribute="top" secondItem="Xpp-J7-T6M" secondAttribute="top" id="cvg-fQ-yvs"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Tge-Ep-cCN" secondAttribute="bottom" id="fPN-gd-nsk"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sEu-So-Ve1" secondAttribute="trailing" id="lnA-O0-wpS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Tge-Ep-cCN" secondAttribute="trailing" id="sfO-N0-XwQ"/>
+                                                    <constraint firstItem="sEu-So-Ve1" firstAttribute="leading" secondItem="Xpp-J7-T6M" secondAttribute="leading" id="zlk-st-qet"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPs-1W-kGL" userLabel="NoteBtnView">
+                                                <rect key="frame" x="73" y="0.0" width="67.5" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwZ-Dw-eWx" userLabel="NoteBtn" customClass="ButtonWithParam" customModule="Metronome" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="80"/>
+                                                        <state key="normal" image="tempoBtn"/>
+                                                        <connections>
+                                                            <action selector="onStartBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cbl-hv-WHO"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music.note" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="b60-ds-vr8" userLabel="Background">
+                                                        <rect key="frame" x="0.0" y="0.5" width="67.5" height="79"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="b60-ds-vr8" firstAttribute="top" secondItem="aPs-1W-kGL" secondAttribute="top" id="4am-xl-WhJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="b60-ds-vr8" secondAttribute="trailing" id="5xg-8S-hvS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="dwZ-Dw-eWx" secondAttribute="trailing" id="AQW-BK-DGQ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="dwZ-Dw-eWx" secondAttribute="bottom" id="Icr-9I-DR2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="b60-ds-vr8" secondAttribute="bottom" id="Kst-Aq-ZbB"/>
+                                                    <constraint firstItem="b60-ds-vr8" firstAttribute="leading" secondItem="aPs-1W-kGL" secondAttribute="leading" id="Sno-Sc-uzf"/>
+                                                    <constraint firstItem="dwZ-Dw-eWx" firstAttribute="leading" secondItem="aPs-1W-kGL" secondAttribute="leading" id="iLa-qo-CzK"/>
+                                                    <constraint firstItem="dwZ-Dw-eWx" firstAttribute="top" secondItem="aPs-1W-kGL" secondAttribute="top" id="nU9-8A-Aok"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Sy-xk-cH6" userLabel="NoteBtnView">
+                                                <rect key="frame" x="145.5" y="0.0" width="68" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIM-xV-9vA" userLabel="NoteBtn" customClass="ButtonWithParam" customModule="Metronome" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="80"/>
+                                                        <state key="normal" image="tempoBtn"/>
+                                                        <connections>
+                                                            <action selector="onStartBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EgX-Uv-tfQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music.note" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="N3v-Qg-lXf" userLabel="Background">
+                                                        <rect key="frame" x="0.0" y="0.5" width="68" height="79"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="N3v-Qg-lXf" firstAttribute="leading" secondItem="9Sy-xk-cH6" secondAttribute="leading" id="37U-Ky-i4w"/>
+                                                    <constraint firstAttribute="trailing" secondItem="N3v-Qg-lXf" secondAttribute="trailing" id="WnU-4J-0nF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="oIM-xV-9vA" secondAttribute="trailing" id="Xay-t1-qAy"/>
+                                                    <constraint firstAttribute="bottom" secondItem="N3v-Qg-lXf" secondAttribute="bottom" id="eC8-YT-stR"/>
+                                                    <constraint firstItem="N3v-Qg-lXf" firstAttribute="top" secondItem="9Sy-xk-cH6" secondAttribute="top" id="ifx-ws-AI2"/>
+                                                    <constraint firstItem="oIM-xV-9vA" firstAttribute="leading" secondItem="9Sy-xk-cH6" secondAttribute="leading" id="mvM-9P-Pho"/>
+                                                    <constraint firstItem="oIM-xV-9vA" firstAttribute="top" secondItem="9Sy-xk-cH6" secondAttribute="top" id="sQK-bC-KLY"/>
+                                                    <constraint firstAttribute="bottom" secondItem="oIM-xV-9vA" secondAttribute="bottom" id="w1g-b9-g2R"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0Y-pw-oBY" userLabel="NoteBtnView">
+                                                <rect key="frame" x="218.5" y="0.0" width="67.5" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBW-zc-dTl" userLabel="NoteBtn" customClass="ButtonWithParam" customModule="Metronome" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="80"/>
+                                                        <state key="normal" image="tempoBtn"/>
+                                                        <connections>
+                                                            <action selector="onStartBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dbY-Wc-AEf"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music.note" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VVm-Rb-2BN" userLabel="Background">
+                                                        <rect key="frame" x="0.0" y="0.5" width="67.5" height="79"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="VVm-Rb-2BN" firstAttribute="leading" secondItem="B0Y-pw-oBY" secondAttribute="leading" id="IEr-0c-lrS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VVm-Rb-2BN" secondAttribute="trailing" id="MbE-cm-Xoo"/>
+                                                    <constraint firstAttribute="bottom" secondItem="OBW-zc-dTl" secondAttribute="bottom" id="Utf-u1-oyy"/>
+                                                    <constraint firstAttribute="bottom" secondItem="VVm-Rb-2BN" secondAttribute="bottom" id="W3z-Bf-oxb"/>
+                                                    <constraint firstItem="OBW-zc-dTl" firstAttribute="leading" secondItem="B0Y-pw-oBY" secondAttribute="leading" id="XSm-QN-irG"/>
+                                                    <constraint firstItem="VVm-Rb-2BN" firstAttribute="top" secondItem="B0Y-pw-oBY" secondAttribute="top" id="caV-jX-Qah"/>
+                                                    <constraint firstItem="OBW-zc-dTl" firstAttribute="top" secondItem="B0Y-pw-oBY" secondAttribute="top" id="nq2-mO-VkX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OBW-zc-dTl" secondAttribute="trailing" id="y4H-SR-WID"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="1ry-1g-kVg"/>
+                                    <constraint firstAttribute="bottom" secondItem="jUy-Xu-vA7" secondAttribute="bottom" id="5nU-Aj-uy5"/>
+                                    <constraint firstAttribute="trailing" secondItem="jUy-Xu-vA7" secondAttribute="trailing" id="fSc-JE-dYI"/>
+                                    <constraint firstItem="jUy-Xu-vA7" firstAttribute="leading" secondItem="Kwy-m5-U0P" secondAttribute="leading" id="qje-e2-eWh"/>
+                                    <constraint firstItem="jUy-Xu-vA7" firstAttribute="top" secondItem="Kwy-m5-U0P" secondAttribute="top" id="r45-Ce-q7m"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Kwy-m5-U0P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="3c1-0z-8Pt"/>
                             <constraint firstItem="rXN-Zw-AAZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4Td-00-kme"/>
                             <constraint firstItem="qFZ-sO-jxZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Zv-Ih-1DK"/>
                             <constraint firstItem="EUc-g8-hdd" firstAttribute="top" secondItem="Vas-bA-ant" secondAttribute="bottom" constant="21" id="Fqt-g5-AQu"/>
@@ -268,11 +386,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EpD-2X-xsv" secondAttribute="trailing" constant="87" id="eMk-0D-E7T"/>
                             <constraint firstItem="EpD-2X-xsv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="gAr-O2-VJT"/>
                             <constraint firstItem="SRe-7l-tWP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="l3L-k8-pHY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kwy-m5-U0P" secondAttribute="trailing" constant="59" id="siv-z3-WVp"/>
+                            <constraint firstItem="Kwy-m5-U0P" firstAttribute="top" secondItem="SRe-7l-tWP" secondAttribute="bottom" constant="8" id="uAA-kz-ooW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="minusOneTempoBtn" destination="78A-d7-OZd" id="Pls-3n-Xgz"/>
                         <outlet property="minusTenTempoBtn" destination="SMI-fg-R89" id="HdK-hH-MDn"/>
+                        <outlet property="notesStackView" destination="jUy-Xu-vA7" id="BT2-Xt-37v"/>
                         <outlet property="plusOneTempoBtn" destination="Pmd-4U-f0j" id="LeN-9Z-A46"/>
                         <outlet property="plusTenTempoBtn" destination="Meq-ZE-gLN" id="HTJ-op-jBg"/>
                         <outlet property="sizeBtn" destination="aVR-KW-Cez" id="vuV-g9-np8"/>
@@ -325,6 +446,7 @@
     </scenes>
     <resources>
         <image name="1.png" width="1000" height="1000"/>
+        <image name="music.note" catalog="system" width="97" height="128"/>
         <image name="tempoBtn" width="170.5" height="170.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

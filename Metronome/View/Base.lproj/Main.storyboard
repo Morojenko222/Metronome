@@ -281,9 +281,6 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwZ-Dw-eWx" userLabel="NoteBtn" customClass="ButtonWithParam" customModule="Metronome" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="67.5" height="80"/>
                                                         <state key="normal" image="tempoBtn"/>
-                                                        <connections>
-                                                            <action selector="onStartBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cbl-hv-WHO"/>
-                                                        </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music.note" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="b60-ds-vr8" userLabel="Background">
                                                         <rect key="frame" x="0.0" y="0.5" width="67.5" height="79"/>
@@ -307,9 +304,6 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIM-xV-9vA" userLabel="NoteBtn" customClass="ButtonWithParam" customModule="Metronome" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="68" height="80"/>
                                                         <state key="normal" image="tempoBtn"/>
-                                                        <connections>
-                                                            <action selector="onStartBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EgX-Uv-tfQ"/>
-                                                        </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music.note" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="N3v-Qg-lXf" userLabel="Background">
                                                         <rect key="frame" x="0.0" y="0.5" width="68" height="79"/>
@@ -333,9 +327,6 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBW-zc-dTl" userLabel="NoteBtn" customClass="ButtonWithParam" customModule="Metronome" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="67.5" height="80"/>
                                                         <state key="normal" image="tempoBtn"/>
-                                                        <connections>
-                                                            <action selector="onStartBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dbY-Wc-AEf"/>
-                                                        </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music.note" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VVm-Rb-2BN" userLabel="Background">
                                                         <rect key="frame" x="0.0" y="0.5" width="67.5" height="79"/>

@@ -10,11 +10,14 @@ import AVFoundation
 
 class MetronomeLogic
 {
+    let INIT_TEMPO = 60
+    let DEFAULT_HIGH_STROKE_NUM = 4
     var highStrokeNum = 4
     
     var timer = Timer()
     var beepTime = 60
-    let INIT_TEMPO = 60
+    var noteSizeDivider = 1
+    
     var needToUpdateTimer = false
     var timerStarted = false
     var currentStrokeNum = 0
@@ -63,7 +66,8 @@ class MetronomeLogic
     
     private func updateTimer ()
     {
-        let interval = 60.0 / Double(beepTime)
+        highStrokeNum = DEFAULT_HIGH_STROKE_NUM * noteSizeDivider
+        let interval = 60.0 / (Double(beepTime) * Double(noteSizeDivider))
         timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval), repeats: false, block: { Timer in
             self.playSound ()
             self.updateTimer()

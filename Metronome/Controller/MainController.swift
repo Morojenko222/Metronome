@@ -63,8 +63,7 @@ class MainController: UIViewController {
                     }
                 }
         }
-        
-        print("BtnCount = \(btnsArray.count)")
+
         for i in 0 ..< btnsArray.count {
             btnsArray[i].param = String(i)
             btnsArray[i].addTarget(self, action: #selector(onNoteBtnPress), for: .touchDown)
@@ -121,6 +120,21 @@ class MainController: UIViewController {
     
     @objc func onNoteBtnPress (_ sender: ButtonWithParam)
     {
-        print ("Test done - \(sender.param)")
+        switch sender.param {
+        case "0":
+            metronomeLogic.noteSizeDivider = 1
+            break
+        case "1":
+            metronomeLogic.noteSizeDivider = 2
+            break
+        case "2":
+            metronomeLogic.noteSizeDivider = 3
+            break
+        case "3":
+            metronomeLogic.noteSizeDivider = 4
+            break
+        default:
+            metronomeLogic.noteSizeDivider = 1
+        }
     }
 }

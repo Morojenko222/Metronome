@@ -25,10 +25,17 @@ class MainController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        //self.navigationController?.navigationBar.shadowImage = UIImage()
         tempoLabel.text = String(metronomeLogic.INIT_TEMPO)
         initController ()
         setupGestures()
         setupNoteButtons()
+    }
+    
+    internal override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     private func initController ()
@@ -136,5 +143,17 @@ class MainController: UIViewController {
         default:
             metronomeLogic.noteSizeDivider = 1
         }
+    }
+    
+    @IBAction func toPresetsVCButtonPress(_ sender: Any) {
+        
+        let id = "presetsVC"
+        guard let presetsVC = storyboard?.instantiateViewController(identifier: id) else {
+            print("Error - Can't find VC with id = \(id)")
+            return
+        }
+        
+        presetsVC.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(presetsVC, animated: true)
     }
 }

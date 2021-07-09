@@ -23,6 +23,8 @@
 		5AA669C42694D19A00CF4BF9 /* MetronomeLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C32694D19A00CF4BF9 /* MetronomeLogic.swift */; };
 		5AA669C62694DF6500CF4BF9 /* MyTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C52694DF6500CF4BF9 /* MyTapGesture.swift */; };
 		5AA669C826963C2100CF4BF9 /* ButtonWithParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C726963C2100CF4BF9 /* ButtonWithParam.swift */; };
+		5AA669CB2698EF1A00CF4BF9 /* PresetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C92698EF1900CF4BF9 /* PresetsViewController.swift */; };
+		5AA669CE2698F08900CF4BF9 /* PresetElemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AA669CD2698F08900CF4BF9 /* PresetElemView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		5AA669C32694D19A00CF4BF9 /* MetronomeLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeLogic.swift; sourceTree = "<group>"; };
 		5AA669C52694DF6500CF4BF9 /* MyTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTapGesture.swift; sourceTree = "<group>"; };
 		5AA669C726963C2100CF4BF9 /* ButtonWithParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithParam.swift; sourceTree = "<group>"; };
+		5AA669C92698EF1900CF4BF9 /* PresetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsViewController.swift; sourceTree = "<group>"; };
+		5AA669CD2698F08900CF4BF9 /* PresetElemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresetElemView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				5AA6699E2683B92600CF4BF9 /* Main.storyboard */,
+				5AA669CD2698F08900CF4BF9 /* PresetElemView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 			children = (
 				5AA6699C2683B92600CF4BF9 /* MainController.swift */,
 				5AA669BB268CFF9500CF4BF9 /* SizeViewController.swift */,
+				5AA669C92698EF1900CF4BF9 /* PresetsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AA669B52683CC2A00CF4BF9 /* met2.wav in Resources */,
+				5AA669CE2698F08900CF4BF9 /* PresetElemView.xib in Resources */,
 				5AA669B62683CC2A00CF4BF9 /* met1.wav in Resources */,
 				5AA669A82683B92E00CF4BF9 /* LaunchScreen.storyboard in Resources */,
 				5AA669B82683CEE800CF4BF9 /* 1.png in Resources */,
@@ -202,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AA669CB2698EF1A00CF4BF9 /* PresetsViewController.swift in Sources */,
 				5AA669A32683B92600CF4BF9 /* Metronome.xcdatamodeld in Sources */,
 				5AA6699D2683B92600CF4BF9 /* MainController.swift in Sources */,
 				5AA669C22692593500CF4BF9 /* DataContainer.swift in Sources */,

@@ -8,13 +8,17 @@
 import UIKit
 
 class PresetsViewController: UITableViewController {
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        //self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "PresetCell", bundle: nil), forCellReuseIdentifier: "presetCell")
+        tableView.rowHeight = 60.0
+        tableView.separatorStyle = .none
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,25 +28,15 @@ class PresetsViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 4
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "presetCell", for: indexPath)
+        //cell.textLabel?.text = String(activeData[indexPath.row])
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

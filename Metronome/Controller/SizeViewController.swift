@@ -66,6 +66,7 @@ extension SizeViewController : UITableViewDataSource
 
 extension SizeViewController : UIGestureRecognizerDelegate
 {
+    //For blocking goBack() when tapping on size table
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         return touch.view == backgroundView
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A5ED05D26A0055E0020F96C /* PresetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5ED05B26A0055E0020F96C /* PresetCell.swift */; };
+		5A5ED05E26A0055E0020F96C /* PresetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A5ED05C26A0055E0020F96C /* PresetCell.xib */; };
 		5AA669992683B92600CF4BF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669982683B92600CF4BF9 /* AppDelegate.swift */; };
 		5AA6699B2683B92600CF4BF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6699A2683B92600CF4BF9 /* SceneDelegate.swift */; };
 		5AA6699D2683B92600CF4BF9 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6699C2683B92600CF4BF9 /* MainController.swift */; };
@@ -24,10 +26,11 @@
 		5AA669C62694DF6500CF4BF9 /* MyTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C52694DF6500CF4BF9 /* MyTapGesture.swift */; };
 		5AA669C826963C2100CF4BF9 /* ButtonWithParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C726963C2100CF4BF9 /* ButtonWithParam.swift */; };
 		5AA669CB2698EF1A00CF4BF9 /* PresetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C92698EF1900CF4BF9 /* PresetsViewController.swift */; };
-		5AA669CE2698F08900CF4BF9 /* PresetElemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AA669CD2698F08900CF4BF9 /* PresetElemView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A5ED05B26A0055E0020F96C /* PresetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetCell.swift; sourceTree = "<group>"; };
+		5A5ED05C26A0055E0020F96C /* PresetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresetCell.xib; sourceTree = "<group>"; };
 		5AA669952683B92600CF4BF9 /* Metronome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metronome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AA669982683B92600CF4BF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AA6699A2683B92600CF4BF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +50,6 @@
 		5AA669C52694DF6500CF4BF9 /* MyTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTapGesture.swift; sourceTree = "<group>"; };
 		5AA669C726963C2100CF4BF9 /* ButtonWithParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithParam.swift; sourceTree = "<group>"; };
 		5AA669C92698EF1900CF4BF9 /* PresetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsViewController.swift; sourceTree = "<group>"; };
-		5AA669CD2698F08900CF4BF9 /* PresetElemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresetElemView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				5AA6699E2683B92600CF4BF9 /* Main.storyboard */,
-				5AA669CD2698F08900CF4BF9 /* PresetElemView.xib */,
+				5A5ED05C26A0055E0020F96C /* PresetCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -119,6 +121,7 @@
 		5AA669B12683BA8300CF4BF9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5A5ED05B26A0055E0020F96C /* PresetCell.swift */,
 				5AA6699C2683B92600CF4BF9 /* MainController.swift */,
 				5AA669BB268CFF9500CF4BF9 /* SizeViewController.swift */,
 				5AA669C92698EF1900CF4BF9 /* PresetsViewController.swift */,
@@ -193,10 +196,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AA669B52683CC2A00CF4BF9 /* met2.wav in Resources */,
-				5AA669CE2698F08900CF4BF9 /* PresetElemView.xib in Resources */,
 				5AA669B62683CC2A00CF4BF9 /* met1.wav in Resources */,
 				5AA669A82683B92E00CF4BF9 /* LaunchScreen.storyboard in Resources */,
 				5AA669B82683CEE800CF4BF9 /* 1.png in Resources */,
+				5A5ED05E26A0055E0020F96C /* PresetCell.xib in Resources */,
 				5AA669A52683B92E00CF4BF9 /* Assets.xcassets in Resources */,
 				5AA669A02683B92600CF4BF9 /* Main.storyboard in Resources */,
 			);
@@ -219,6 +222,7 @@
 				5AA669C62694DF6500CF4BF9 /* MyTapGesture.swift in Sources */,
 				5AA669C826963C2100CF4BF9 /* ButtonWithParam.swift in Sources */,
 				5AA669BA268A5AD300CF4BF9 /* TempoBtns.swift in Sources */,
+				5A5ED05D26A0055E0020F96C /* PresetCell.swift in Sources */,
 				5AA6699B2683B92600CF4BF9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

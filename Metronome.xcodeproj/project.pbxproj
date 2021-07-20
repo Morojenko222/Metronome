@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A498ECC26A601CC00F5B795 /* PresetStructureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498ECA26A601CC00F5B795 /* PresetStructureCell.swift */; };
+		5A498ECD26A601CC00F5B795 /* PresetStructureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A498ECB26A601CC00F5B795 /* PresetStructureCell.xib */; };
 		5A5ED05D26A0055E0020F96C /* PresetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5ED05B26A0055E0020F96C /* PresetCell.swift */; };
 		5A5ED05E26A0055E0020F96C /* PresetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A5ED05C26A0055E0020F96C /* PresetCell.xib */; };
 		5AA669992683B92600CF4BF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669982683B92600CF4BF9 /* AppDelegate.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A498ECA26A601CC00F5B795 /* PresetStructureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetStructureCell.swift; sourceTree = "<group>"; };
+		5A498ECB26A601CC00F5B795 /* PresetStructureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresetStructureCell.xib; sourceTree = "<group>"; };
 		5A5ED05B26A0055E0020F96C /* PresetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetCell.swift; sourceTree = "<group>"; };
 		5A5ED05C26A0055E0020F96C /* PresetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresetCell.xib; sourceTree = "<group>"; };
 		5AA669952683B92600CF4BF9 /* Metronome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metronome.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +118,7 @@
 			children = (
 				5AA6699E2683B92600CF4BF9 /* Main.storyboard */,
 				5A5ED05C26A0055E0020F96C /* PresetCell.xib */,
+				5A498ECB26A601CC00F5B795 /* PresetStructureCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 		5AA669B12683BA8300CF4BF9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5A498ECA26A601CC00F5B795 /* PresetStructureCell.swift */,
 				5A5ED05B26A0055E0020F96C /* PresetCell.swift */,
 				5AA6699C2683B92600CF4BF9 /* MainController.swift */,
 				5AA669BB268CFF9500CF4BF9 /* SizeViewController.swift */,
@@ -199,6 +205,7 @@
 				5AA669B62683CC2A00CF4BF9 /* met1.wav in Resources */,
 				5AA669A82683B92E00CF4BF9 /* LaunchScreen.storyboard in Resources */,
 				5AA669B82683CEE800CF4BF9 /* 1.png in Resources */,
+				5A498ECD26A601CC00F5B795 /* PresetStructureCell.xib in Resources */,
 				5A5ED05E26A0055E0020F96C /* PresetCell.xib in Resources */,
 				5AA669A52683B92E00CF4BF9 /* Assets.xcassets in Resources */,
 				5AA669A02683B92600CF4BF9 /* Main.storyboard in Resources */,
@@ -217,6 +224,7 @@
 				5AA6699D2683B92600CF4BF9 /* MainController.swift in Sources */,
 				5AA669C22692593500CF4BF9 /* DataContainer.swift in Sources */,
 				5AA669C42694D19A00CF4BF9 /* MetronomeLogic.swift in Sources */,
+				5A498ECC26A601CC00F5B795 /* PresetStructureCell.swift in Sources */,
 				5AA669992683B92600CF4BF9 /* AppDelegate.swift in Sources */,
 				5AA669BC268CFF9500CF4BF9 /* SizeViewController.swift in Sources */,
 				5AA669C62694DF6500CF4BF9 /* MyTapGesture.swift in Sources */,

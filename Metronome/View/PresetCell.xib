@@ -25,9 +25,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRf-Cy-W9B" userLabel="PresetBtn">
-                        <rect key="frame" x="0.0" y="0.0" width="160" height="20"/>
-                    </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9E1-DD-rsq" userLabel="DeleteBtnView">
                         <rect key="frame" x="160" y="0.0" width="60" height="20"/>
                         <subviews>
@@ -56,16 +53,12 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="tRf-Cy-W9B" secondAttribute="bottom" id="EHb-D2-gM5"/>
                     <constraint firstAttribute="bottom" secondItem="NyI-5x-eQV" secondAttribute="bottom" constant="9" id="EhK-88-pap"/>
                     <constraint firstAttribute="bottom" secondItem="9E1-DD-rsq" secondAttribute="bottom" id="FWM-Gq-JWw"/>
                     <constraint firstItem="9E1-DD-rsq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="K0c-rc-fff"/>
-                    <constraint firstItem="tRf-Cy-W9B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Zbd-dL-pia"/>
                     <constraint firstAttribute="trailing" secondItem="9E1-DD-rsq" secondAttribute="trailing" id="azY-4V-6rb"/>
                     <constraint firstItem="NyI-5x-eQV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="kbV-yt-fuf"/>
-                    <constraint firstItem="9E1-DD-rsq" firstAttribute="leading" secondItem="tRf-Cy-W9B" secondAttribute="trailing" id="n3J-uz-eNl"/>
                     <constraint firstItem="NyI-5x-eQV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="uVp-NB-ENS"/>
-                    <constraint firstItem="tRf-Cy-W9B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yrc-5f-MfX"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

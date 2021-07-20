@@ -431,26 +431,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="AGI-pd-myA" id="mE2-Ia-fC8"/>
+                            <outlet property="delegate" destination="AGI-pd-myA" id="Uik-kE-yVj"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hsI-46-Mwj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077" y="137"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="JS7-rj-zpp">
+            <objects>
+                <tableViewController storyboardIdentifier="presetEditVC" id="xe2-M0-Roz" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RFf-XG-XwV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="oxa-wH-CfG">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Zq4-FV-wJn">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oxa-wH-CfG" id="46F-OF-djf">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zq4-FV-wJn" id="ADY-2a-fac">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="AGI-pd-myA" id="mE2-Ia-fC8"/>
-                            <outlet property="delegate" destination="AGI-pd-myA" id="Uik-kE-yVj"/>
+                            <outlet property="dataSource" destination="xe2-M0-Roz" id="zyU-6R-moD"/>
+                            <outlet property="delegate" destination="xe2-M0-Roz" id="Kjj-GG-q0A"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dTf-tN-lX5"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hsI-46-Mwj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T6f-PL-GJx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1077" y="137"/>
+            <point key="canvasLocation" x="1842" y="137"/>
         </scene>
         <!--Size View Controller-->
         <scene sceneID="Zkb-5T-szX">

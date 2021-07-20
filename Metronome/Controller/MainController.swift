@@ -77,8 +77,7 @@ class MainController: UIViewController {
         }
     }
     
-    @objc
-    private func changeSize(sender : MyTapGesture)
+    @objc private func changeSize(sender : MyTapGesture)
     {
         if (sender.state != .ended)
         {

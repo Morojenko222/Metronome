@@ -11,16 +11,16 @@
         <!--Main Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainController" customModule="Metronome" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainController" id="BYZ-38-t0r" customClass="MainController" customModule="Metronome" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="rXN-Zw-AAZ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFZ-sO-jxZ" userLabel="TempoBtnsView">
-                                <rect key="frame" x="59" y="297" width="296" height="81"/>
+                                <rect key="frame" x="59" y="209" width="296" height="81"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="aQQ-DF-jiW">
                                         <rect key="frame" x="0.0" y="0.0" width="296" height="81"/>
@@ -170,7 +170,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vas-bA-ant" userLabel="PlayBtnView">
-                                <rect key="frame" x="123.5" y="386" width="167" height="74"/>
+                                <rect key="frame" x="123.5" y="298" width="167" height="74"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0KA-Ro-KQM">
                                         <rect key="frame" x="0.0" y="0.0" width="167" height="74"/>
@@ -191,7 +191,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EpD-2X-xsv" userLabel="TempoView">
-                                <rect key="frame" x="87" y="189" width="240" height="100"/>
+                                <rect key="frame" x="87" y="101" width="240" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNg-5c-Vv9">
                                         <rect key="frame" x="76.5" y="32" width="87.5" height="36"/>
@@ -208,7 +208,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SRe-7l-tWP" userLabel="FirstSizeBtnView">
-                                <rect key="frame" x="69" y="481" width="86" height="74"/>
+                                <rect key="frame" x="69" y="393" width="86" height="74"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVR-KW-Cez" userLabel="Size">
                                         <rect key="frame" x="0.0" y="0.0" width="86" height="74"/>
@@ -229,7 +229,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUc-g8-hdd" userLabel="SecondSizeBtnView">
-                                <rect key="frame" x="269" y="481" width="86" height="74"/>
+                                <rect key="frame" x="269" y="393" width="86" height="74"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jes-Qn-rE1" userLabel="Size">
                                         <rect key="frame" x="0.0" y="0.0" width="86" height="74"/>
@@ -247,7 +247,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwy-m5-U0P" userLabel="NotesBlock">
-                                <rect key="frame" x="69" y="563" width="286" height="80"/>
+                                <rect key="frame" x="69" y="475" width="286" height="80"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jUy-Xu-vA7">
                                         <rect key="frame" x="0.0" y="0.0" width="286" height="80"/>
@@ -401,6 +401,7 @@
                         <outlet property="sizeBtn" destination="aVR-KW-Cez" id="vuV-g9-np8"/>
                         <outlet property="size_2Btn" destination="jes-Qn-rE1" id="dth-X1-9g3"/>
                         <outlet property="tempoLabel" destination="HNg-5c-Vv9" id="yrQ-Cm-nvv"/>
+                        <outlet property="toPresetViewBtn" destination="1k4-8Q-06z" id="Z2b-3u-xYj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -441,10 +442,10 @@
             </objects>
             <point key="canvasLocation" x="1077" y="137"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Preset Structure Controller-->
         <scene sceneID="JS7-rj-zpp">
             <objects>
-                <tableViewController storyboardIdentifier="presetEditVC" id="xe2-M0-Roz" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="presetEditVC" id="xe2-M0-Roz" customClass="PresetStructureController" customModule="Metronome" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RFf-XG-XwV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -464,17 +465,20 @@
                             <outlet property="delegate" destination="xe2-M0-Roz" id="Kjj-GG-q0A"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toEditPresetStruct" id="DLR-Wt-q6E"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T6f-PL-GJx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1842" y="137"/>
+            <point key="canvasLocation" x="1077" y="812"/>
         </scene>
         <!--Size View Controller-->
         <scene sceneID="Zkb-5T-szX">
             <objects>
                 <viewController storyboardIdentifier="sizeVC" id="Cmt-NM-2el" customClass="SizeViewController" customModule="Metronome" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ms1-Au-GCk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ukD-HU-3qJ">
@@ -508,6 +512,9 @@
             <point key="canvasLocation" x="894" y="-514"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="DLR-Wt-q6E"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="1.png" width="1000" height="1000"/>
         <image name="music.note" catalog="system" width="97" height="128"/>

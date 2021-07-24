@@ -20,8 +20,10 @@ class MainController: UIViewController {
     @IBOutlet var sizeBtn: UIButton!
     @IBOutlet var size_2Btn: UIButton!
     @IBOutlet var notesStackView: UIStackView!
+    @IBOutlet var toPresetViewBtn: UIButton!
     
     private var notesBtns : [ButtonWithParam]?
+    var inPresetMode = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,20 @@ class MainController: UIViewController {
     internal override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        if (inPresetMode)
+        {
+            toPresetViewBtn.isHidden = true
+        }
+        else
+        {
+            toPresetViewBtn.isHidden = false
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("OnDisappear")
+        inPresetMode = false
     }
     
     private func initController ()

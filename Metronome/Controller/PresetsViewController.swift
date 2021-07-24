@@ -29,13 +29,13 @@ class PresetsViewController: UITableViewController {
     @objc func onRightNavButtonPress()
     {
         let id = "presetEditVC"
-        guard let presetsVC = storyboard?.instantiateViewController(identifier: id) else {
+        guard let presetsEditVC = storyboard?.instantiateViewController(identifier: id) else {
             print("Error - Can't find VC with id = \(id)")
             return
         }
         
-        presetsVC.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(presetsVC, animated: true)
+        presetsEditVC.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(presetsEditVC, animated: true)
     }
 
     // MARK: - Table view data source

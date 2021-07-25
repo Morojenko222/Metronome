@@ -34,6 +34,9 @@ class PresetsViewController: UITableViewController {
             return
         }
         
+        var presets = DataContainer.Instance.presets
+        presets.append(Preset(presetParts: []))
+        
         presetsEditVC.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(presetsEditVC, animated: true)
     }

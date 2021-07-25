@@ -22,12 +22,6 @@ class PresetStructureController: UITableViewController {
     
     @objc func onRightNavButtonPress()
     {
-        print("nav controllers = \(navigationController?.viewControllers.count)")
-        guard let mainVC = navigationController?.viewControllers[0] else {
-            print("ERROR")
-            return
-        }
-        let mainVCSafe = mainVC as! MainController
         performSegue(withIdentifier: "toEditPresetStruct", sender: self)
     }
     
@@ -55,7 +49,6 @@ class PresetStructureController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("Pressed - \(indexPath.row)")
     }
 
     /*

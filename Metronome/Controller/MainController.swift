@@ -21,6 +21,12 @@ class MainController: UIViewController {
     @IBOutlet var size_2Btn: UIButton!
     @IBOutlet var notesStackView: UIStackView!
     @IBOutlet var toPresetViewBtn: UIButton!
+    @IBOutlet var tactsCountLabel: UILabel!
+    @IBOutlet var plusTactBtn: TempoBtns!
+    @IBOutlet var minusTactBtn: TempoBtns!
+    @IBOutlet var addPresetBtn: TempoBtns!
+    @IBOutlet var bottomContainer: UIView!
+    
     
     private var notesBtns : [ButtonWithParam]?
     var inPresetMode = false
@@ -42,15 +48,16 @@ class MainController: UIViewController {
         if (inPresetMode)
         {
             toPresetViewBtn.isHidden = true
+            bottomContainer.isHidden = false
         }
         else
         {
             toPresetViewBtn.isHidden = false
+            bottomContainer.isHidden = true
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        print("OnDisappear")
         inPresetMode = false
     }
     
@@ -170,5 +177,23 @@ class MainController: UIViewController {
         
         presetsVC.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(presetsVC, animated: true)
+    }
+    @IBAction func changeTactsCountBtnOnPress(_ sender: UIButton) {
+        if let titleText = sender.titleLabel?.text
+        {
+            switch titleText {
+            case "+1":
+                metronomeLogic.changePresetTactsCount(1)
+            case "-1":
+                metronomeLogic.changePresetTactsCount(-1)
+            default:
+                metronomeLogic.changePresetTactsCount(1)
+            }
+            
+            tactsCountLabel.text = String(metronomeLogic.presetTactsCount)
+        }
+    }
+    @IBAction func addPresetBtnOnPress(_ sender: UIButton) {
+        
     }
 }

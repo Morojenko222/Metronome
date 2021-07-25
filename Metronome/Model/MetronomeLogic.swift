@@ -22,6 +22,8 @@ class MetronomeLogic
     var timerStarted = false
     var currentStrokeNum = 0
     
+    var presetTactsCount = 1
+    
     var playerHighSound : AVAudioPlayer!
     var playerLowSound : AVAudioPlayer!
     
@@ -111,5 +113,10 @@ class MetronomeLogic
         {
             stopMetronome()
         }
+    }
+    
+    func changePresetTactsCount(_ change : Int) {
+        let summ = presetTactsCount + change
+        presetTactsCount = summ > 1 ? summ : 1
     }
 }

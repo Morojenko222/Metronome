@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A0CE68A26ADE99D0009A65C /* PresetPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE68926ADE99D0009A65C /* PresetPart.swift */; };
+		5A0CE68C26ADEC520009A65C /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE68B26ADEC520009A65C /* Preset.swift */; };
 		5A498ECC26A601CC00F5B795 /* PresetStructureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498ECA26A601CC00F5B795 /* PresetStructureCell.swift */; };
 		5A498ECD26A601CC00F5B795 /* PresetStructureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A498ECB26A601CC00F5B795 /* PresetStructureCell.xib */; };
 		5A498ED126A8C22A00F5B795 /* PresetStructureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498ED026A8C22A00F5B795 /* PresetStructureController.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A0CE68926ADE99D0009A65C /* PresetPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetPart.swift; sourceTree = "<group>"; };
+		5A0CE68B26ADEC520009A65C /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
 		5A498ECA26A601CC00F5B795 /* PresetStructureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetStructureCell.swift; sourceTree = "<group>"; };
 		5A498ECB26A601CC00F5B795 /* PresetStructureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresetStructureCell.xib; sourceTree = "<group>"; };
 		5A498ED026A8C22A00F5B795 /* PresetStructureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetStructureController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				5AA669C32694D19A00CF4BF9 /* MetronomeLogic.swift */,
 				5AA669C52694DF6500CF4BF9 /* MyTapGesture.swift */,
 				5AA669C726963C2100CF4BF9 /* ButtonWithParam.swift */,
+				5A0CE68926ADE99D0009A65C /* PresetPart.swift */,
+				5A0CE68B26ADEC520009A65C /* Preset.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,8 +235,10 @@
 				5AA669C22692593500CF4BF9 /* DataContainer.swift in Sources */,
 				5AA669C42694D19A00CF4BF9 /* MetronomeLogic.swift in Sources */,
 				5A498ECC26A601CC00F5B795 /* PresetStructureCell.swift in Sources */,
+				5A0CE68A26ADE99D0009A65C /* PresetPart.swift in Sources */,
 				5AA669992683B92600CF4BF9 /* AppDelegate.swift in Sources */,
 				5AA669BC268CFF9500CF4BF9 /* SizeViewController.swift in Sources */,
+				5A0CE68C26ADEC520009A65C /* Preset.swift in Sources */,
 				5AA669C62694DF6500CF4BF9 /* MyTapGesture.swift in Sources */,
 				5AA669C826963C2100CF4BF9 /* ButtonWithParam.swift in Sources */,
 				5AA669BA268A5AD300CF4BF9 /* TempoBtns.swift in Sources */,

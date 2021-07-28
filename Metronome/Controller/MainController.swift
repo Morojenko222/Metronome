@@ -129,7 +129,8 @@ class MainController: UIViewController {
             sizeVC_Casted.activeData = DataContainer.Instance.sizeData_1
         }
         
-        self.present(sizeVC, animated: true)
+        sizeVC_Casted.sizeName = sender.strParam
+        self.present(sizeVC_Casted, animated: true)
     }
     
     private func updateTempoView ()
@@ -194,6 +195,10 @@ class MainController: UIViewController {
         }
     }
     @IBAction func addPresetBtnOnPress(_ sender: UIButton) {
-        
+        if let lastPreset = DataContainer.Instance.presets.last
+        {
+            //let elem = PresetPart(bpm: metronomeLogic.beepTime, size_1: metronomeLogic, size_2: <#T##Int#>, count: <#T##Int#>)
+            //lastPreset.presetParts.append(<#T##newElement: PresetPart##PresetPart#>)
+        }
     }
 }

@@ -11,7 +11,7 @@ import AVFoundation
 class MetronomeLogic
 {
     let INIT_TEMPO = 60
-    let DEFAULT_HIGH_STROKE_NUM = 4
+    var sizeHighStrokeNum = 4
     var highStrokeNum = 4
     
     var timer = Timer()
@@ -68,7 +68,7 @@ class MetronomeLogic
     
     private func updateTimer ()
     {
-        highStrokeNum = DEFAULT_HIGH_STROKE_NUM * noteSizeDivider
+        highStrokeNum = sizeHighStrokeNum * noteSizeDivider
         let interval = 60.0 / (Double(beepTime) * Double(noteSizeDivider))
         timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval), repeats: false, block: { Timer in
             self.playSound ()
@@ -80,7 +80,7 @@ class MetronomeLogic
     {
         var currPlayer : AVAudioPlayer
         
-        if (currentStrokeNum == highStrokeNum)
+        if (currentStrokeNum >= highStrokeNum)
         {
             currentStrokeNum = 0
         }

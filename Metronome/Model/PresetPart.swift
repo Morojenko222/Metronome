@@ -12,4 +12,5 @@ struct PresetPart {
     var size_1 : Int
     var size_2 : Int
     var count : Int
+    var noteSizeDivider : Int
 }

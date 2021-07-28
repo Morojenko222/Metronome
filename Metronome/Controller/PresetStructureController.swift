@@ -27,7 +27,6 @@ class PresetStructureController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEditPresetStruct" {
-            print("Prepare segue")
             if let mainVCSafe = segue.destination as? MainController {
                 mainVCSafe.inPresetMode = true
             }

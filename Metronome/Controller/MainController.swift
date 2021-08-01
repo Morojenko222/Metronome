@@ -11,7 +11,8 @@ import AVFoundation
 class MainController: UIViewController {
     
     //private var player: AVAudioPlayer
-    private let metronomeLogic = MetronomeLogic()
+    let metronomeLogic = MetronomeLogic()
+    let presetEditingLogic = PresetEditingLogic()
     @IBOutlet weak var tempoLabel: UILabel!
     @IBOutlet var minusTenTempoBtn: TempoBtns!
     @IBOutlet var minusOneTempoBtn: TempoBtns!
@@ -171,12 +172,13 @@ class MainController: UIViewController {
     @IBAction func toPresetsVCButtonPress(_ sender: Any) {
         
         let id = "presetsVC"
-        guard let presetsVC = storyboard?.instantiateViewController(identifier: id) else {
+        guard let presetsVC = storyboard?.instantiateViewController(identifier: id) as? PresetsViewController else {
             print("Error - Can't find VC with id = \(id)")
             return
         }
         
         presetsVC.modalPresentationStyle = .fullScreen
+        presetsVC.mainController = self
         navigationController?.pushViewController(presetsVC, animated: true)
     }
     @IBAction func changeTactsCountBtnOnPress(_ sender: UIButton) {
@@ -195,10 +197,7 @@ class MainController: UIViewController {
         }
     }
     @IBAction func addPresetBtnOnPress(_ sender: UIButton) {
-        if let lastPreset = DataContainer.Instance.presets.last
-        {
-            //let elem = PresetPart(bpm: metronomeLogic.beepTime, size_1: metronomeLogic, size_2: <#T##Int#>, count: <#T##Int#>)
-            //lastPreset.presetParts.append(<#T##newElement: PresetPart##PresetPart#>)
-        }
+        presetEditingLogic.updatePickedPresetPart(metronomeLogic: metronomeLogic)
+        dismiss(animated: true, completion: nil)
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DataContainer {
+class DataContainer {
     
     static var Instance = DataContainer()
     

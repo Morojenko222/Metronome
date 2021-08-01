@@ -31,6 +31,7 @@
 		5AA669C62694DF6500CF4BF9 /* MyTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C52694DF6500CF4BF9 /* MyTapGesture.swift */; };
 		5AA669C826963C2100CF4BF9 /* ButtonWithParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C726963C2100CF4BF9 /* ButtonWithParam.swift */; };
 		5AA669CB2698EF1A00CF4BF9 /* PresetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C92698EF1900CF4BF9 /* PresetsViewController.swift */; };
+		5ACE768A26B71A21000B9A79 /* PresetEditingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE768926B71A21000B9A79 /* PresetEditingLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		5AA669C52694DF6500CF4BF9 /* MyTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTapGesture.swift; sourceTree = "<group>"; };
 		5AA669C726963C2100CF4BF9 /* ButtonWithParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithParam.swift; sourceTree = "<group>"; };
 		5AA669C92698EF1900CF4BF9 /* PresetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsViewController.swift; sourceTree = "<group>"; };
+		5ACE768926B71A21000B9A79 /* PresetEditingLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetEditingLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				5AA669C726963C2100CF4BF9 /* ButtonWithParam.swift */,
 				5A0CE68926ADE99D0009A65C /* PresetPart.swift */,
 				5A0CE68B26ADEC520009A65C /* Preset.swift */,
+				5ACE768926B71A21000B9A79 /* PresetEditingLogic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				5A498ED126A8C22A00F5B795 /* PresetStructureController.swift in Sources */,
 				5AA6699D2683B92600CF4BF9 /* MainController.swift in Sources */,
 				5AA669C22692593500CF4BF9 /* DataContainer.swift in Sources */,
+				5ACE768A26B71A21000B9A79 /* PresetEditingLogic.swift in Sources */,
 				5AA669C42694D19A00CF4BF9 /* MetronomeLogic.swift in Sources */,
 				5A498ECC26A601CC00F5B795 /* PresetStructureCell.swift in Sources */,
 				5A0CE68A26ADE99D0009A65C /* PresetPart.swift in Sources */,

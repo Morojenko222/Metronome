@@ -9,6 +9,7 @@ import UIKit
 
 class PresetsViewController: UITableViewController {
     
+    var mainController : MainController?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,31 +21,42 @@ class PresetsViewController: UITableViewController {
         tableView.rowHeight = 60.0
         tableView.separatorStyle = .none
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onRightNavButtonPress))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddPresetBtnPress))
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         //self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.reloadData()
     }
     
-    @objc func onRightNavButtonPress()
+    @objc func onAddPresetBtnPress()
+    {
+        let presetsCount = DataContainer.Instance.presets.count
+        loadPresetStructureScreen(presetsCount)
+    }
+    
+    private func loadPresetStructureScreen (_ presetNum : Int)
     {
         let id = "presetEditVC"
-        guard let presetsEditVC = storyboard?.instantiateViewController(identifier: id) else {
-            print("Error - Can't find VC with id = \(id)")
+        guard let presetsEditVC = storyboard?.instantiateViewController(identifier: id) as? PresetStructureController else {
+            print("Error - Can't get PresetStructureId")
             return
         }
         
-        var presets = DataContainer.Instance.presets
-        presets.append(Preset(presetParts: []))
+        DataContainer.Instance.presets.append(Preset(presetParts: []))
         
         presetsEditVC.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(presetsEditVC, animated: true)
+        presetsEditVC.mainController = mainController
+        
+        if let safeMC = mainController, let safeNavC = navigationController
+        {
+            safeMC.presetEditingLogic.pickedPresetNum = presetNum
+            safeNavC.pushViewController(presetsEditVC, animated: true)
+        }
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        let presets = DataContainer.Instance.presets
+        return presets.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,7 +67,7 @@ class PresetsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("Pressed - \(indexPath.row)")
+        loadPresetStructureScreen(indexPath.row)
     }
 
     /*

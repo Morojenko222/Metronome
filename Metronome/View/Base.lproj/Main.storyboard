@@ -379,7 +379,6 @@
                                                 <state key="normal" title="-1"/>
                                                 <connections>
                                                     <action selector="changeTactsCountBtnOnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="40j-BG-V8R"/>
-                                                    <action selector="onTempoBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yeJ-nY-P5o"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -407,7 +406,6 @@
                                                 <state key="normal" title="+1"/>
                                                 <connections>
                                                     <action selector="changeTactsCountBtnOnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R0R-ww-Aol"/>
-                                                    <action selector="onTempoBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RDI-WU-Dj1"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -441,8 +439,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
                                                 <state key="normal" title="ADD"/>
                                                 <connections>
-                                                    <action selector="addPresetBtnOnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mXY-Qp-Bn9"/>
-                                                    <action selector="onTempoBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yte-hs-hzg"/>
+                                                    <action selector="addPresetBtnOnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5SH-lQ-bKr"/>
                                                 </connections>
                                             </button>
                                         </subviews>

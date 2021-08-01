@@ -9,6 +9,8 @@ import UIKit
 
 class PresetStructureController: UITableViewController {
 
+    var mainController : MainController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,11 +18,23 @@ class PresetStructureController: UITableViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "PresetStructureCell", bundle: nil), forCellReuseIdentifier: "presetStructureCell")
         tableView.rowHeight = 60.0
+        popoverPresentationController?.delegate = self
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onRightNavButtonPress))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddPresetPartBtnPress))
     }
     
-    @objc func onRightNavButtonPress()
+    @objc func onAddPresetPartBtnPress()
+    {
+        if let mc = mainController
+        {
+            mc.presetEditingLogic.pickedPresetStructNum = mc.presetEditingLogic.currentPreset.presetParts.count
+            goToSetPresetPartScreen()
+        }
+        
+        goToSetPresetPartScreen()
+    }
+    
+    func goToSetPresetPartScreen ()
     {
         performSegue(withIdentifier: "toEditPresetStruct", sender: self)
     }
@@ -29,15 +43,24 @@ class PresetStructureController: UITableViewController {
         if segue.identifier == "toEditPresetStruct" {
             if let mainVCSafe = segue.destination as? MainController {
                 mainVCSafe.inPresetMode = true
+                mainVCSafe.modalPresentationStyle = .popover
             }
         }
+    }
+    
+    internal override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        guard let MC = mainController else {
+            print("ERROR - Main controller hasn't been initialized")
+            return 0
+        }
+        
+        return MC.presetEditingLogic.currentPreset.presetParts.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,6 +71,12 @@ class PresetStructureController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let mc = mainController
+        {
+            mc.presetEditingLogic.pickedPresetStructNum = indexPath.row
+            goToSetPresetPartScreen()
+        }
     }
 
     /*
@@ -105,4 +134,12 @@ class PresetStructureController: UITableViewController {
     }
     */
 
+}
+
+extension PresetStructureController : UIPopoverPresentationControllerDelegate
+{
+    func popoverPresentationControllerDidDismissPopover(popoverPresentationController: UIPopoverPresentationController)
+    {
+        print("CHECK!!!")
+    }
 }

@@ -43,7 +43,7 @@ class PresetStructureController: UITableViewController {
         if segue.identifier == "toEditPresetStruct" {
             if let mainVCSafe = segue.destination as? MainController {
                 mainVCSafe.inPresetMode = true
-                mainVCSafe.modalPresentationStyle = .popover
+                mainVCSafe.modalPresentationStyle = .fullScreen
             }
         }
     }

@@ -467,13 +467,27 @@
                                     <constraint firstAttribute="trailing" secondItem="C05-1s-kps" secondAttribute="trailing" constant="45" id="gvL-Vd-ofE"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ewn-lb-Nsm" userLabel="BackToPresets">
+                                <rect key="frame" x="20" y="40" width="75" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="Fw4-Fe-JBy"/>
+                                    <constraint firstAttribute="height" constant="36" id="yGd-G0-67J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="&lt;Back"/>
+                                <connections>
+                                    <action selector="backToStructBtnOnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q6e-kW-t0c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ewn-lb-Nsm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="10q-nW-E2o"/>
                             <constraint firstItem="Kwy-m5-U0P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="69" id="3c1-0z-8Pt"/>
                             <constraint firstItem="rXN-Zw-AAZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4Td-00-kme"/>
                             <constraint firstItem="qFZ-sO-jxZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Zv-Ih-1DK"/>
+                            <constraint firstItem="Ewn-lb-Nsm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="A5U-KL-uQw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zWy-EK-TWI" secondAttribute="trailing" id="CbA-eF-Al5"/>
                             <constraint firstItem="EUc-g8-hdd" firstAttribute="top" secondItem="Vas-bA-ant" secondAttribute="bottom" constant="21" id="Fqt-g5-AQu"/>
                             <constraint firstItem="EpD-2X-xsv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="101" id="GWU-jc-vFq"/>
@@ -516,7 +530,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="401"/>
+            <point key="canvasLocation" x="140.57971014492756" y="400.44642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oIS-lI-JfM">

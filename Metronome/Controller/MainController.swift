@@ -200,4 +200,7 @@ class MainController: UIViewController {
         presetEditingLogic.updatePickedPresetPart(metronomeLogic: metronomeLogic)
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func backToStructBtnOnPress(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

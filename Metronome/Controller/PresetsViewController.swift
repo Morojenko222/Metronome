@@ -13,14 +13,14 @@ class PresetsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "PresetCell", bundle: nil), forCellReuseIdentifier: "presetCell")
         tableView.rowHeight = 60.0
         tableView.separatorStyle = .none
         
+        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        navigationController?.navigationBar.isHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddPresetBtnPress))
 
         tableView.reloadData()

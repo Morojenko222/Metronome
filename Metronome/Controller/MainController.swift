@@ -20,6 +20,7 @@ class MainController: UIViewController {
     @IBOutlet var plusTenTempoBtn: TempoBtns!
     @IBOutlet var sizeBtn: UIButton!
     @IBOutlet var size_2Btn: UIButton!
+    @IBOutlet var backToPresetSBtn: UIButton!
     @IBOutlet var notesStackView: UIStackView!
     @IBOutlet var toPresetViewBtn: UIButton!
     @IBOutlet var tactsCountLabel: UILabel!
@@ -34,33 +35,28 @@ class MainController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        //self.navigationController?.navigationBar.shadowImage = UIImage()
         tempoLabel.text = String(metronomeLogic.INIT_TEMPO)
         initController ()
         setupGestures()
         setupNoteButtons()
+        setupBackToSButton()
     }
     
     internal override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isHidden = true
         
-        if (inPresetMode)
-        {
-            toPresetViewBtn.isHidden = true
-            bottomContainer.isHidden = false
-        }
-        else
-        {
-            toPresetViewBtn.isHidden = false
-            bottomContainer.isHidden = true
-        }
+        toPresetViewBtn.isHidden = inPresetMode
+        bottomContainer.isHidden = !inPresetMode
+        backToPresetSBtn.isHidden = !inPresetMode
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         inPresetMode = false
     }
+    
+    // MARK: - Initialization
     
     private func initController ()
     {
@@ -99,6 +95,17 @@ class MainController: UIViewController {
             btnsArray[i].param = String(i)
             btnsArray[i].addTarget(self, action: #selector(onNoteBtnPress), for: .touchDown)
         }
+    }
+    
+    private func setupBackToSButton ()
+    {
+        let imageAttachment = NSTextAttachment()
+        imageAttachment.image = UIImage(systemName: "chevron.left")
+
+        let fullString = NSMutableAttributedString(string: "")
+        fullString.append(NSAttributedString(attachment: imageAttachment))
+        fullString.append(NSAttributedString(string: " Back"))
+        backToPresetSBtn.titleLabel!.text = fullString.string
     }
     
     @objc private func changeSize(sender : MyTapGesture)

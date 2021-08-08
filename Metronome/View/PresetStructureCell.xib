@@ -58,14 +58,14 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icO-f8-IIV">
-                        <rect key="frame" x="107" y="12" width="46.5" height="21"/>
+                        <rect key="frame" x="107" y="12" width="153" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="uCF-L6-EwE" firstAttribute="leading" secondItem="icO-f8-IIV" secondAttribute="trailing" constant="106.5" id="0PN-TD-z8A"/>
+                    <constraint firstItem="uCF-L6-EwE" firstAttribute="leading" secondItem="icO-f8-IIV" secondAttribute="trailing" id="0PN-TD-z8A"/>
                     <constraint firstAttribute="trailing" secondItem="bu6-HG-ek2" secondAttribute="trailing" constant="221" id="EFG-Zj-T6C"/>
                     <constraint firstAttribute="trailing" secondItem="uCF-L6-EwE" secondAttribute="trailing" id="Exn-VJ-QPU"/>
                     <constraint firstItem="LPQ-Ds-ipT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="F81-Mv-IWm"/>

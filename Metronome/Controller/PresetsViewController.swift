@@ -26,10 +26,16 @@ class PresetsViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    internal override func viewWillAppear(_ animated: Bool) {
+        DataContainer.Instance.cleanEmptyPresets()
+        tableView.reloadData()
+    }
+    
     @objc func onAddPresetBtnPress()
     {
-        let presetsCount = DataContainer.Instance.presets.count
-        loadPresetStructureScreen(presetsCount)
+        DataContainer.Instance.presets.append(Preset(presetParts: []))
+        let presetNum = DataContainer.Instance.presets.count - 1
+        loadPresetStructureScreen(presetNum)
     }
     
     private func loadPresetStructureScreen (_ presetNum : Int)
@@ -40,14 +46,12 @@ class PresetsViewController: UITableViewController {
             return
         }
         
-        DataContainer.Instance.presets.append(Preset(presetParts: []))
-        
         presetsEditVC.modalPresentationStyle = .fullScreen
         presetsEditVC.mainController = mainController
         
-        if let safeMC = mainController, let safeNavC = navigationController
+        if let safeNavC = navigationController
         {
-            safeMC.presetEditingLogic.pickedPresetNum = presetNum
+            DataContainer.Instance.pickedPresetNum = presetNum
             safeNavC.pushViewController(presetsEditVC, animated: true)
         }
     }

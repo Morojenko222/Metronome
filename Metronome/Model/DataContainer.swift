@@ -15,4 +15,34 @@ class DataContainer {
     let sizeData_2 = [4, 8]
     
     var presets : [Preset] = []
+    
+    var pickedPresetNum = 0
+    var pickedPresetStructNum = 0
+    
+    var currentPreset : Preset
+    {
+        get{return DataContainer.Instance.presets[pickedPresetNum]}
+        set{DataContainer.Instance.presets[pickedPresetNum] = newValue}
+    }
+    
+    var currentPresetStruct : PresetPart
+    {
+        get{return DataContainer.Instance.presets[pickedPresetNum].presetParts[pickedPresetStructNum]}
+        set{DataContainer.Instance.presets[pickedPresetNum].presetParts[pickedPresetStructNum] = newValue}
+    }
+    
+    func cleanEmptyPresets ()
+    {
+        var emptyNumbers : [Int] = []
+        for (i, preset) in DataContainer.Instance.presets.enumerated() {
+            if (preset.presetParts.count == 0)
+            {
+                emptyNumbers.append(i)
+            }
+        }
+        
+        for num in emptyNumbers {
+            DataContainer.Instance.presets.remove(at: num)
+        }
+    }
 }

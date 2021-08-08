@@ -51,7 +51,7 @@ class MetronomeLogic
         return player
     }
     
-    private func startMetronome ()
+    func startMetronome ()
     {
         timer.invalidate()
         playSound ()
@@ -59,7 +59,7 @@ class MetronomeLogic
         timerStarted = true
     }
     
-    private func stopMetronome ()
+    func stopMetronome ()
     {
         timer.invalidate()
         currentStrokeNum = 0

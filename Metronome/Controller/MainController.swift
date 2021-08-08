@@ -54,6 +54,7 @@ class MainController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         inPresetMode = false
+        metronomeLogic.stopMetronome()
     }
     
     // MARK: - Initialization

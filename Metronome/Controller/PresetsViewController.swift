@@ -27,18 +27,19 @@ class PresetsViewController: UITableViewController {
     }
     
     internal override func viewWillAppear(_ animated: Bool) {
-        DataContainer.Instance.cleanEmptyPresets()
+        mainController?.coreDataLogic.loadData()
+        //DataContainer.Instance.cleanEmptyPresets()
         tableView.reloadData()
     }
     
     @objc func onAddPresetBtnPress()
     {
-        DataContainer.Instance.presets.append(Preset(presetParts: []))
-        let presetNum = DataContainer.Instance.presets.count - 1
-        loadPresetStructureScreen(presetNum)
+        let presetCount = DataContainer.Instance.getPresetsCount()
+        DataContainer.Instance.pickedPresetId = presetCount
+        loadPresetStructureScreen()
     }
     
-    private func loadPresetStructureScreen (_ presetNum : Int)
+    private func loadPresetStructureScreen ()
     {
         let id = "presetEditVC"
         guard let presetsEditVC = storyboard?.instantiateViewController(identifier: id) as? PresetStructureController else {
@@ -51,7 +52,6 @@ class PresetsViewController: UITableViewController {
         
         if let safeNavC = navigationController
         {
-            DataContainer.Instance.pickedPresetNum = presetNum
             safeNavC.pushViewController(presetsEditVC, animated: true)
         }
     }
@@ -59,29 +59,25 @@ class PresetsViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let presets = DataContainer.Instance.presets
-        return presets.count
+        let presetsCount = DataContainer.Instance.getPresetsCount()
+        
+        return presetsCount
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "presetCell", for: indexPath)
-        //cell.textLabel?.text = String(activeData[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: "presetCell", for: indexPath) as! PresetCell
+        
+        let presetsSet = DataContainer.Instance.getPresetsSet()
+        let presetsArray = presetsSet.sorted()
+        cell.presetNameLabel.text = String("Preset \(presetsArray[indexPath.row])")
+        cell.indexPath = indexPath
+        cell.presetViewController = self
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        loadPresetStructureScreen(indexPath.row)
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
+        DataContainer.Instance.pickedPresetId = indexPath.row
+        loadPresetStructureScreen()
+    }    
 }

@@ -14,35 +14,87 @@ class DataContainer {
     let sizeData_1 = [1, 2, 3, 4, 5, 6, 7, 8]
     let sizeData_2 = [4, 8]
     
-    var presets : [Preset] = []
+    var presetsArray : [PresetEntity] = []
     
-    var pickedPresetNum = 0
-    var pickedPresetStructNum = 0
+    var pickedPresetId = 0
+    var pickedPresetStructId = 0
     
-    var currentPreset : Preset
+    /*
+    var currentPreset : PresetEntity
     {
-        get{return DataContainer.Instance.presets[pickedPresetNum]}
-        set{DataContainer.Instance.presets[pickedPresetNum] = newValue}
+        get{return DataContainer.Instance.presetsArray[pickedPresetId]}
+        set{DataContainer.Instance.presetsArray[pickedPresetId] = newValue}
+    }
+ */
+    
+    /*
+    func getPresetsCount () -> Int
+    {
+        var maxId = 0
+        
+        if (presetsArray.count == 0)
+        {
+            return 0
+        }
+        
+        for elem in presetsArray {
+            if (maxId < elem.presetId)
+            {
+                maxId = Int(elem.presetId)
+            }
+        }
+        
+        return maxId + 1;
+    }
+ */
+    
+    func getElemsByPresetId(_ id : Int) -> [PresetEntity] {
+        let arrayWithId = presetsArray.filter{elem in
+            return elem.presetId == id
+        }
+        return arrayWithId
     }
     
-    var currentPresetStruct : PresetPart
-    {
-        get{return DataContainer.Instance.presets[pickedPresetNum].presetParts[pickedPresetStructNum]}
-        set{DataContainer.Instance.presets[pickedPresetNum].presetParts[pickedPresetStructNum] = newValue}
+    func getElemsOfCurrentPreset () -> [PresetEntity] {
+        let arrayWithId = presetsArray.filter{elem in
+            return elem.presetId == pickedPresetId
+        }
+        return arrayWithId
     }
     
+    func getPresetsCount () -> Int {
+        var presetsSet = Set<Int>()
+        for preset in presetsArray {
+            presetsSet.insert(Int(preset.presetId))
+        }
+        
+        return presetsSet.count
+    }
+    
+    func getPresetsSet () -> Set<Int> {
+        var presetsSet = Set<Int>()
+        for preset in presetsArray {
+            presetsSet.insert(Int(preset.presetId))
+        }
+        
+        return presetsSet
+    }
+    
+    /*
     func cleanEmptyPresets ()
     {
         var emptyNumbers : [Int] = []
-        for (i, preset) in DataContainer.Instance.presets.enumerated() {
-            if (preset.presetParts.count == 0)
+        for (i, _) in DataContainer.Instance.presetsArray.enumerated() {
+            if (presetsArray.count == 0)
             {
                 emptyNumbers.append(i)
             }
         }
         
         for num in emptyNumbers {
-            DataContainer.Instance.presets.remove(at: num)
+            presetsArray.remove(at: num)
         }
     }
+    */
+    
 }

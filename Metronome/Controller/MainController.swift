@@ -12,7 +12,8 @@ class MainController: UIViewController {
     
     //private var player: AVAudioPlayer
     let metronomeLogic = MetronomeLogic()
-    let presetEditingLogic = PresetEditingLogic()
+    let presetEditingLogic = PresetEditingLogic(UIApplication.shared.delegate as! AppDelegate)
+    let coreDataLogic = CoreDataLogic(UIApplication.shared.delegate as! AppDelegate)
     @IBOutlet weak var tempoLabel: UILabel!
     @IBOutlet var minusTenTempoBtn: TempoBtns!
     @IBOutlet var minusOneTempoBtn: TempoBtns!
@@ -206,6 +207,7 @@ class MainController: UIViewController {
     }
     @IBAction func addPresetBtnOnPress(_ sender: UIButton) {
         presetEditingLogic.updatePickedPresetPart(metronomeLogic: metronomeLogic)
+        coreDataLogic.saveData()
         dismiss(animated: true, completion: nil)
     }
     @IBAction func backToStructBtnOnPress(_ sender: Any) {

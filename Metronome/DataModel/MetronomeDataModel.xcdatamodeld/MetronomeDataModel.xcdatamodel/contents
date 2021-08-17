@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E241" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="PresetEntity" representedClassName=".PresetEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="bpm" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="count" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="noteSizeDivider" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="presetId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="presetPartId" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size1" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="size2" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="PresetPartEntity" representedClassName=".PresetPartEntity" syncable="YES" codeGenerationType="class"/>
+    <elements>
+        <element name="PresetEntity" positionX="-54" positionY="-9" width="128" height="134"/>
+        <element name="PresetPartEntity" positionX="-36" positionY="54" width="128" height="29"/>
+    </elements>
+</model>

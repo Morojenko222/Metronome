@@ -11,6 +11,9 @@ class PresetCell: UITableViewCell {
 
     @IBOutlet var presetNameLabel: UILabel!
 
+    var indexPath : IndexPath?
+    var presetViewController : PresetsViewController?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,6 +29,19 @@ class PresetCell: UITableViewCell {
  */
     
     @IBAction func deleteBtnOnPress(_ sender: UIButton) {
-        print("Delete btn")
+        
+        if let presController = presetViewController, let mc = presController.mainController,
+           let safeIndexPath = indexPath
+        {
+            mc.presetEditingLogic.deletePresetById(safeIndexPath.row)
+            presController.tableView.deleteRows(at: [safeIndexPath], with: .automatic)
+            /*
+            var elems = DataContainer.Instance.getElemsByPresetId(cellId)
+            for elem in elems {
+                
+            }
+ */
+            print("Delete btn")
+        }
     }
 }

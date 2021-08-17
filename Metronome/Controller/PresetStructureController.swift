@@ -25,7 +25,8 @@ class PresetStructureController: UITableViewController {
     
     @objc func onAddPresetPartBtnPress()
     {
-        DataContainer.Instance.pickedPresetStructNum = DataContainer.Instance.currentPreset.presetParts.count
+        let presetStructs = DataContainer.Instance.getElemsOfCurrentPreset()
+        DataContainer.Instance.pickedPresetStructId = presetStructs.count
         goToSetPresetPartScreen()
     }
     
@@ -44,6 +45,7 @@ class PresetStructureController: UITableViewController {
     }
     
     internal override func viewWillAppear(_ animated: Bool) {
+        mainController?.coreDataLogic.loadData()
         tableView.reloadData()
     }
     
@@ -51,14 +53,17 @@ class PresetStructureController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataContainer.Instance.currentPreset.presetParts.count
+        return DataContainer.Instance.getElemsOfCurrentPreset().count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "presetStructureCell", for: indexPath) as! PresetStructureCell
-        let bpm = DataContainer.Instance.currentPreset.presetParts[indexPath.row].bpm
-        let count = DataContainer.Instance.currentPreset.presetParts[indexPath.row].count
-        let size = DataContainer.Instance.currentPreset.presetParts[indexPath.row].size_1
+        var presetStructsElems = DataContainer.Instance.getElemsOfCurrentPreset()
+        presetStructsElems.sort(by: { $0.presetPartId < $1.presetPartId })
+        
+        let bpm = presetStructsElems[indexPath.row].bpm
+        let count = presetStructsElems[indexPath.row].count
+        let size = presetStructsElems[indexPath.row].size1
         
         cell.bpmLabel.text = "BMM: \(bpm)"
         cell.countLabel.text = "Count: \(count)"
@@ -69,7 +74,7 @@ class PresetStructureController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        DataContainer.Instance.pickedPresetStructNum = indexPath.row
+        DataContainer.Instance.pickedPresetStructId = indexPath.row
         goToSetPresetPartScreen()
     }
     

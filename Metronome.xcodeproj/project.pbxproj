@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A0CE68A26ADE99D0009A65C /* PresetPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE68926ADE99D0009A65C /* PresetPart.swift */; };
+		5A0CE68C26ADEC520009A65C /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CE68B26ADEC520009A65C /* Preset.swift */; };
+		5A498ECC26A601CC00F5B795 /* PresetStructureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498ECA26A601CC00F5B795 /* PresetStructureCell.swift */; };
+		5A498ECD26A601CC00F5B795 /* PresetStructureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A498ECB26A601CC00F5B795 /* PresetStructureCell.xib */; };
+		5A498ED126A8C22A00F5B795 /* PresetStructureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A498ED026A8C22A00F5B795 /* PresetStructureController.swift */; };
+		5A5ED05D26A0055E0020F96C /* PresetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A5ED05B26A0055E0020F96C /* PresetCell.swift */; };
+		5A5ED05E26A0055E0020F96C /* PresetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A5ED05C26A0055E0020F96C /* PresetCell.xib */; };
+		5AA669992683B92600CF4BF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669982683B92600CF4BF9 /* AppDelegate.swift */; };
+		5AA6699B2683B92600CF4BF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6699A2683B92600CF4BF9 /* SceneDelegate.swift */; };
+		5AA6699D2683B92600CF4BF9 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6699C2683B92600CF4BF9 /* MainController.swift */; };
+		5AA669A02683B92600CF4BF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA6699E2683B92600CF4BF9 /* Main.storyboard */; };
+		5AA669A52683B92E00CF4BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AA669A42683B92E00CF4BF9 /* Assets.xcassets */; };
+		5AA669A82683B92E00CF4BF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AA669A62683B92E00CF4BF9 /* LaunchScreen.storyboard */; };
+		5AA669B52683CC2A00CF4BF9 /* met2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5AA669B32683CC2A00CF4BF9 /* met2.wav */; };
+		5AA669B62683CC2A00CF4BF9 /* met1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5AA669B42683CC2A00CF4BF9 /* met1.wav */; };
+		5AA669B82683CEE800CF4BF9 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AA669B72683CEE800CF4BF9 /* 1.png */; };
+		5AA669BA268A5AD300CF4BF9 /* TempoBtns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669B9268A5AD300CF4BF9 /* TempoBtns.swift */; };
+		5AA669BC268CFF9500CF4BF9 /* SizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669BB268CFF9500CF4BF9 /* SizeViewController.swift */; };
+		5AA669C22692593500CF4BF9 /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C12692593500CF4BF9 /* DataContainer.swift */; };
+		5AA669C42694D19A00CF4BF9 /* MetronomeLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C32694D19A00CF4BF9 /* MetronomeLogic.swift */; };
+		5AA669C62694DF6500CF4BF9 /* MyTapGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C52694DF6500CF4BF9 /* MyTapGesture.swift */; };
+		5AA669C826963C2100CF4BF9 /* ButtonWithParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C726963C2100CF4BF9 /* ButtonWithParam.swift */; };
+		5AA669CB2698EF1A00CF4BF9 /* PresetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA669C92698EF1900CF4BF9 /* PresetsViewController.swift */; };
+		5ABCCE3526C1CCAF00168E2D /* MetronomeDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCE3326C1CCAF00168E2D /* MetronomeDataModel.xcdatamodeld */; };
+		5ABCCE3726C3184400168E2D /* CoreDataLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCE3626C3184400168E2D /* CoreDataLogic.swift */; };
+		5ACE768A26B71A21000B9A79 /* PresetEditingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE768926B71A21000B9A79 /* PresetEditingLogic.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5A0CE68926ADE99D0009A65C /* PresetPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetPart.swift; sourceTree = "<group>"; };
+		5A0CE68B26ADEC520009A65C /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
+		5A498ECA26A601CC00F5B795 /* PresetStructureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetStructureCell.swift; sourceTree = "<group>"; };
+		5A498ECB26A601CC00F5B795 /* PresetStructureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresetStructureCell.xib; sourceTree = "<group>"; };
+		5A498ED026A8C22A00F5B795 /* PresetStructureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetStructureController.swift; sourceTree = "<group>"; };
+		5A5ED05B26A0055E0020F96C /* PresetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetCell.swift; sourceTree = "<group>"; };
+		5A5ED05C26A0055E0020F96C /* PresetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresetCell.xib; sourceTree = "<group>"; };
+		5AA669952683B92600CF4BF9 /* Metronome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metronome.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AA669982683B92600CF4BF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5AA6699A2683B92600CF4BF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5AA6699C2683B92600CF4BF9 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		5AA6699F2683B92600CF4BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5AA669A42683B92E00CF4BF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5AA669A72683B92E00CF4BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5AA669A92683B92E00CF4BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AA669B32683CC2A00CF4BF9 /* met2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = met2.wav; sourceTree = "<group>"; };
+		5AA669B42683CC2A00CF4BF9 /* met1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = met1.wav; sourceTree = "<group>"; };
+		5AA669B72683CEE800CF4BF9 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		5AA669B9268A5AD300CF4BF9 /* TempoBtns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoBtns.swift; sourceTree = "<group>"; };
+		5AA669BB268CFF9500CF4BF9 /* SizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeViewController.swift; sourceTree = "<group>"; };
+		5AA669C12692593500CF4BF9 /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
+		5AA669C32694D19A00CF4BF9 /* MetronomeLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetronomeLogic.swift; sourceTree = "<group>"; };
+		5AA669C52694DF6500CF4BF9 /* MyTapGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTapGesture.swift; sourceTree = "<group>"; };
+		5AA669C726963C2100CF4BF9 /* ButtonWithParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithParam.swift; sourceTree = "<group>"; };
+		5AA669C92698EF1900CF4BF9 /* PresetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsViewController.swift; sourceTree = "<group>"; };
+		5ABCCE3426C1CCAF00168E2D /* MetronomeDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MetronomeDataModel.xcdatamodel; sourceTree = "<group>"; };
+		5ABCCE3626C3184400168E2D /* CoreDataLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataLogic.swift; sourceTree = "<group>"; };
+		5ACE768926B71A21000B9A79 /* PresetEditingLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetEditingLogic.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5AA669922683B92600CF4BF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5AA6698C2683B92500CF4BF9 = {
+			isa = PBXGroup;
+			children = (
+				5AA669972683B92600CF4BF9 /* Metronome */,
+				5AA669962683B92600CF4BF9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5AA669962683B92600CF4BF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AA669952683B92600CF4BF9 /* Metronome.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AA669972683B92600CF4BF9 /* Metronome */ = {
+			isa = PBXGroup;
+			children = (
+				5ABCCE3826C5A24B00168E2D /* DataModel */,
+				5AA669B22683CC1D00CF4BF9 /* Sounds */,
+				5AA669982683B92600CF4BF9 /* AppDelegate.swift */,
+				5AA6699A2683B92600CF4BF9 /* SceneDelegate.swift */,
+				5AA669B12683BA8300CF4BF9 /* Controller */,
+				5AA669B02683BA7900CF4BF9 /* View */,
+				5AA669AF2683BA7300CF4BF9 /* Model */,
+				5AA669A42683B92E00CF4BF9 /* Assets.xcassets */,
+				5AA669B72683CEE800CF4BF9 /* 1.png */,
+				5AA669A62683B92E00CF4BF9 /* LaunchScreen.storyboard */,
+				5AA669A92683B92E00CF4BF9 /* Info.plist */,
+			);
+			path = Metronome;
+			sourceTree = "<group>";
+		};
+		5AA669AF2683BA7300CF4BF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A498ECA26A601CC00F5B795 /* PresetStructureCell.swift */,
+				5A5ED05B26A0055E0020F96C /* PresetCell.swift */,
+				5AA669B9268A5AD300CF4BF9 /* TempoBtns.swift */,
+				5AA669C12692593500CF4BF9 /* DataContainer.swift */,
+				5AA669C32694D19A00CF4BF9 /* MetronomeLogic.swift */,
+				5AA669C52694DF6500CF4BF9 /* MyTapGesture.swift */,
+				5AA669C726963C2100CF4BF9 /* ButtonWithParam.swift */,
+				5A0CE68926ADE99D0009A65C /* PresetPart.swift */,
+				5A0CE68B26ADEC520009A65C /* Preset.swift */,
+				5ACE768926B71A21000B9A79 /* PresetEditingLogic.swift */,
+				5ABCCE3626C3184400168E2D /* CoreDataLogic.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5AA669B02683BA7900CF4BF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5AA6699E2683B92600CF4BF9 /* Main.storyboard */,
+				5A5ED05C26A0055E0020F96C /* PresetCell.xib */,
+				5A498ECB26A601CC00F5B795 /* PresetStructureCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5AA669B12683BA8300CF4BF9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5AA6699C2683B92600CF4BF9 /* MainController.swift */,
+				5AA669BB268CFF9500CF4BF9 /* SizeViewController.swift */,
+				5AA669C92698EF1900CF4BF9 /* PresetsViewController.swift */,
+				5A498ED026A8C22A00F5B795 /* PresetStructureController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5AA669B22683CC1D00CF4BF9 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				5AA669B42683CC2A00CF4BF9 /* met1.wav */,
+				5AA669B32683CC2A00CF4BF9 /* met2.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		5ABCCE3826C5A24B00168E2D /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				5ABCCE3326C1CCAF00168E2D /* MetronomeDataModel.xcdatamodeld */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5AA669942683B92600CF4BF9 /* Metronome */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AA669AC2683B92E00CF4BF9 /* Build configuration list for PBXNativeTarget "Metronome" */;
+			buildPhases = (
+				5AA669912683B92600CF4BF9 /* Sources */,
+				5AA669922683B92600CF4BF9 /* Frameworks */,
+				5AA669932683B92600CF4BF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Metronome;
+			productName = Metronome;
+			productReference = 5AA669952683B92600CF4BF9 /* Metronome.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5AA6698D2683B92500CF4BF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					5AA669942683B92600CF4BF9 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 5AA669902683B92500CF4BF9 /* Build configuration list for PBXProject "Metronome" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5AA6698C2683B92500CF4BF9;
+			productRefGroup = 5AA669962683B92600CF4BF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5AA669942683B92600CF4BF9 /* Metronome */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5AA669932683B92600CF4BF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AA669B52683CC2A00CF4BF9 /* met2.wav in Resources */,
+				5AA669B62683CC2A00CF4BF9 /* met1.wav in Resources */,
+				5AA669A82683B92E00CF4BF9 /* LaunchScreen.storyboard in Resources */,
+				5AA669B82683CEE800CF4BF9 /* 1.png in Resources */,
+				5A498ECD26A601CC00F5B795 /* PresetStructureCell.xib in Resources */,
+				5A5ED05E26A0055E0020F96C /* PresetCell.xib in Resources */,
+				5AA669A52683B92E00CF4BF9 /* Assets.xcassets in Resources */,
+				5AA669A02683B92600CF4BF9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5AA669912683B92600CF4BF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AA669CB2698EF1A00CF4BF9 /* PresetsViewController.swift in Sources */,
+				5A498ED126A8C22A00F5B795 /* PresetStructureController.swift in Sources */,
+				5AA6699D2683B92600CF4BF9 /* MainController.swift in Sources */,
+				5AA669C22692593500CF4BF9 /* DataContainer.swift in Sources */,
+				5ACE768A26B71A21000B9A79 /* PresetEditingLogic.swift in Sources */,
+				5AA669C42694D19A00CF4BF9 /* MetronomeLogic.swift in Sources */,
+				5A498ECC26A601CC00F5B795 /* PresetStructureCell.swift in Sources */,
+				5A0CE68A26ADE99D0009A65C /* PresetPart.swift in Sources */,
+				5AA669992683B92600CF4BF9 /* AppDelegate.swift in Sources */,
+				5ABCCE3526C1CCAF00168E2D /* MetronomeDataModel.xcdatamodeld in Sources */,
+				5AA669BC268CFF9500CF4BF9 /* SizeViewController.swift in Sources */,
+				5A0CE68C26ADEC520009A65C /* Preset.swift in Sources */,
+				5AA669C62694DF6500CF4BF9 /* MyTapGesture.swift in Sources */,
+				5AA669C826963C2100CF4BF9 /* ButtonWithParam.swift in Sources */,
+				5AA669BA268A5AD300CF4BF9 /* TempoBtns.swift in Sources */,
+				5A5ED05D26A0055E0020F96C /* PresetCell.swift in Sources */,
+				5AA6699B2683B92600CF4BF9 /* SceneDelegate.swift in Sources */,
+				5ABCCE3726C3184400168E2D /* CoreDataLogic.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5AA6699E2683B92600CF4BF9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AA6699F2683B92600CF4BF9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5AA669A62683B92E00CF4BF9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AA669A72683B92E00CF4BF9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5AA669AA2683B92E00CF4BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5AA669AB2683B92E00CF4BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5AA669AD2683B92E00CF4BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Metronome/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.parasight.Metronome;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5AA669AE2683B92E00CF4BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Metronome/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.parasight.Metronome;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5AA669902683B92500CF4BF9 /* Build configuration list for PBXProject "Metronome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AA669AA2683B92E00CF4BF9 /* Debug */,
+				5AA669AB2683B92E00CF4BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AA669AC2683B92E00CF4BF9 /* Build configuration list for PBXNativeTarget "Metronome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AA669AD2683B92E00CF4BF9 /* Debug */,
+				5AA669AE2683B92E00CF4BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5ABCCE3326C1CCAF00168E2D /* MetronomeDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5ABCCE3426C1CCAF00168E2D /* MetronomeDataModel.xcdatamodel */,
+			);
+			currentVersion = 5ABCCE3426C1CCAF00168E2D /* MetronomeDataModel.xcdatamodel */;
+			path = MetronomeDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5AA6698D2683B92500CF4BF9 /* Project object */;
+}

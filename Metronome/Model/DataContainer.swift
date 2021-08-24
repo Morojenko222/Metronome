@@ -62,22 +62,18 @@ class DataContainer {
         return arrayWithId
     }
     
-    func getPresetsCount () -> Int {
-        var presetsSet = Set<Int>()
-        for preset in presetsArray {
-            presetsSet.insert(Int(preset.presetId))
-        }
-        
-        return presetsSet.count
-    }
-    
-    func getPresetsSet () -> Set<Int> {
+    func getPresetsIdsSet () -> Set<Int> {
         var presetsSet = Set<Int>()
         for preset in presetsArray {
             presetsSet.insert(Int(preset.presetId))
         }
         
         return presetsSet
+    }
+    
+    func getPresetsCount () -> Int {
+        let presetSet = getPresetsIdsSet ()
+        return presetSet.count
     }
     
     /*

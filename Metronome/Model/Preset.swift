@@ -9,5 +9,6 @@ import Foundation
 
 struct Preset
 {
-    var presetParts : [PresetPart]
+    var presetId : Int
+    var presetLabelText : String
 }

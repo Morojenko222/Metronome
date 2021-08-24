@@ -12,6 +12,7 @@ class PresetCell: UITableViewCell {
     @IBOutlet var presetNameLabel: UILabel!
 
     var indexPath : IndexPath?
+    var presetId = -1
     var presetViewController : PresetsViewController?
     
     override func awakeFromNib() {
@@ -33,8 +34,10 @@ class PresetCell: UITableViewCell {
         if let presController = presetViewController, let mc = presController.mainController,
            let safeIndexPath = indexPath
         {
-            mc.presetEditingLogic.deletePresetById(safeIndexPath.row)
-            presController.tableView.deleteRows(at: [safeIndexPath], with: .automatic)
+            presController.presetViewLogic!.removePreset(presetId, safeIndexPath)
+            //mc.presetEditingLogic.deletePresetById(presetId)
+            //presController.tableView.deleteRows(at: [safeIndexPath], with: .automatic)
+            //presController.tableView.reloadData()
             /*
             var elems = DataContainer.Instance.getElemsByPresetId(cellId)
             for elem in elems {

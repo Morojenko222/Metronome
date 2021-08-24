@@ -12,7 +12,7 @@ class MainController: UIViewController {
     
     //private var player: AVAudioPlayer
     let metronomeLogic = MetronomeLogic()
-    let presetEditingLogic = PresetEditingLogic(UIApplication.shared.delegate as! AppDelegate)
+    var presetEditingLogic : PresetEditingLogic!
     let coreDataLogic = CoreDataLogic(UIApplication.shared.delegate as! AppDelegate)
     @IBOutlet weak var tempoLabel: UILabel!
     @IBOutlet var minusTenTempoBtn: TempoBtns!
@@ -37,10 +37,13 @@ class MainController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tempoLabel.text = String(metronomeLogic.INIT_TEMPO)
+        presetEditingLogic = PresetEditingLogic(UIApplication.shared.delegate as! AppDelegate, coreDataLogic)
         initController ()
         setupGestures()
         setupNoteButtons()
         setupBackToSButton()
+        coreDataLogic.loadData()
+        //coreDataLogic.cleanAllData()
     }
     
     internal override func viewWillAppear(_ animated: Bool) {

@@ -10,6 +10,8 @@ import UIKit
 class PresetsViewController: UITableViewController {
     
     var mainController : MainController?
+    var presetViewLogic : PresetViewLogic?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,21 +24,23 @@ class PresetsViewController: UITableViewController {
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.isHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddPresetBtnPress))
-
-        tableView.reloadData()
+        
+        presetViewLogic = PresetViewLogic(self)
     }
     
     internal override func viewWillAppear(_ animated: Bool) {
-        mainController?.coreDataLogic.loadData()
-        //DataContainer.Instance.cleanEmptyPresets()
+        presetViewLogic!.updateCellArray()
         tableView.reloadData()
     }
     
     @objc func onAddPresetBtnPress()
     {
-        let presetCount = DataContainer.Instance.getPresetsCount()
-        DataContainer.Instance.pickedPresetId = presetCount
-        loadPresetStructureScreen()
+        if let safePVL = presetViewLogic
+        {
+            let newPresetId = safePVL.getFreeIdForNewPreset()
+            DataContainer.Instance.pickedPresetId = newPresetId
+            loadPresetStructureScreen()
+        }
     }
     
     private func loadPresetStructureScreen ()
@@ -66,18 +70,29 @@ class PresetsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "presetCell", for: indexPath) as! PresetCell
-        
+
+        /*
+        print("Here = \(indexPath.row)")
         let presetsSet = DataContainer.Instance.getPresetsSet()
         let presetsArray = presetsSet.sorted()
-        cell.presetNameLabel.text = String("Preset \(presetsArray[indexPath.row])")
-        cell.indexPath = indexPath
-        cell.presetViewController = self
+ */
+        if let safePVL = presetViewLogic
+        {
+            cell.presetNameLabel.text = safePVL.presetInfoArray[indexPath.row].presetLabelText
+            cell.presetId = safePVL.presetInfoArray[indexPath.row].presetId
+            cell.presetViewController = self
+            cell.indexPath = indexPath
+        }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        DataContainer.Instance.pickedPresetId = indexPath.row
-        loadPresetStructureScreen()
+        
+        if let safePVL = presetViewLogic
+        {
+            DataContainer.Instance.pickedPresetId = safePVL.presetInfoArray[indexPath.row].presetId
+            loadPresetStructureScreen()
+        }
     }    
 }

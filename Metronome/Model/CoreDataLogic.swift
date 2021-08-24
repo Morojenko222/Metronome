@@ -10,10 +10,10 @@ import CoreData
 
 class CoreDataLogic {
     
-    var context : NSManagedObjectContext
+    private var _context : NSManagedObjectContext
     
     init(_ inputAppDelegate : AppDelegate) {
-        context = inputAppDelegate.persistentContainer.viewContext
+        _context = inputAppDelegate.persistentContainer.viewContext
     }
     
     // MARK: Methods to Open, Store and Fetch data
@@ -22,7 +22,7 @@ class CoreDataLogic {
         {
             do
             {
-                try context.save()
+                try _context.save()
             }
             catch
             {
@@ -36,11 +36,20 @@ class CoreDataLogic {
             
             do
             {
-                DataContainer.Instance.presetsArray = try context.fetch(request)
+                DataContainer.Instance.presetsArray = try _context.fetch(request)
             }
             catch
             {
                 print("Error - \(error)")
             }
         }
+    
+    func cleanAllData() {
+        for preset in DataContainer.Instance.presetsArray {
+            _context.delete(preset)
+        }
+        saveData()
+        
+        DataContainer.Instance.presetsArray.removeAll()
+    }
 }

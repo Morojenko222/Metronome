@@ -479,6 +479,14 @@
                                     <action selector="backToStructBtnOnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q6e-kW-t0c"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNL-vL-yKP">
+                                <rect key="frame" x="220" y="118" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="TestCleanData"/>
+                                <connections>
+                                    <action selector="testCleanDataOnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5YG-ma-XhJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

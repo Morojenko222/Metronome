@@ -55,11 +55,17 @@ class DataContainer {
         return arrayWithId
     }
     
-    func getElemsOfCurrentPreset () -> [PresetEntity] {
+    func getElemsOfCurrentPreset () -> [PresetPart] {
         let arrayWithId = presetsArray.filter{elem in
             return elem.presetId == pickedPresetId
         }
-        return arrayWithId
+        var presetParts : [PresetPart] = []
+        for elem in arrayWithId {
+            let newPartInfo = PresetPart(id: Int(elem.presetPartId) ,bpm: Int(elem.bpm), size_1: Int(elem.size1), size_2: Int(elem.size2), count: Int(elem.count), noteSizeDivider: Int(elem.noteSizeDivider))
+            presetParts.append(newPartInfo)
+        }
+        
+        return presetParts
     }
     
     func getPresetsIdsSet () -> Set<Int> {

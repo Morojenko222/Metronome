@@ -43,6 +43,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24E-53-HZj" userLabel="DeleteBtn" customClass="TempoBtns" customModule="Metronome" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="60" height="44"/>
                                 <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deletePresetStructureOnPress:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="I81-39-c42"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>

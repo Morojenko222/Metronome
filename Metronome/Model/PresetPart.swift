@@ -8,6 +8,7 @@
 import Foundation
 
 struct PresetPart {
+    var id : Int
     var bpm : Int
     var size_1 : Int
     var size_2 : Int

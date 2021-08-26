@@ -33,6 +33,7 @@
 		5ABCCE3526C1CCAF00168E2D /* MetronomeDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCE3326C1CCAF00168E2D /* MetronomeDataModel.xcdatamodeld */; };
 		5ABCCE3726C3184400168E2D /* CoreDataLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCE3626C3184400168E2D /* CoreDataLogic.swift */; };
 		5ABCCE3A26CED5D200168E2D /* PresetViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCE3926CED5D200168E2D /* PresetViewLogic.swift */; };
+		5ABCCE3C26D5935100168E2D /* PresetStructureViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCE3B26D5935100168E2D /* PresetStructureViewLogic.swift */; };
 		5ACE768A26B71A21000B9A79 /* PresetEditingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE768926B71A21000B9A79 /* PresetEditingLogic.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		5ABCCE3426C1CCAF00168E2D /* MetronomeDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MetronomeDataModel.xcdatamodel; sourceTree = "<group>"; };
 		5ABCCE3626C3184400168E2D /* CoreDataLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataLogic.swift; sourceTree = "<group>"; };
 		5ABCCE3926CED5D200168E2D /* PresetViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetViewLogic.swift; sourceTree = "<group>"; };
+		5ABCCE3B26D5935100168E2D /* PresetStructureViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetStructureViewLogic.swift; sourceTree = "<group>"; };
 		5ACE768926B71A21000B9A79 /* PresetEditingLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetEditingLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 				5ACE768926B71A21000B9A79 /* PresetEditingLogic.swift */,
 				5ABCCE3626C3184400168E2D /* CoreDataLogic.swift */,
 				5ABCCE3926CED5D200168E2D /* PresetViewLogic.swift */,
+				5ABCCE3B26D5935100168E2D /* PresetStructureViewLogic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				5ABCCE3A26CED5D200168E2D /* PresetViewLogic.swift in Sources */,
 				5A5ED05D26A0055E0020F96C /* PresetCell.swift in Sources */,
 				5AA6699B2683B92600CF4BF9 /* SceneDelegate.swift in Sources */,
+				5ABCCE3C26D5935100168E2D /* PresetStructureViewLogic.swift in Sources */,
 				5ABCCE3726C3184400168E2D /* CoreDataLogic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -42,10 +42,10 @@ class PresetEditingLogic {
         if let safeCoreData = _coreDataLogic
         {
             let presetArrayById = DataContainer.Instance.getElemsByPresetId(id)
-
             let presetArray = DataContainer.Instance.presetsArray
             let filteredPresetArray = presetArray.filter{$0.presetId != id}
-                DataContainer.Instance.presetsArray = filteredPresetArray
+            
+            DataContainer.Instance.presetsArray = filteredPresetArray
             
             for elem in presetArrayById {
                 // It leads to make zero elem in presetArray. We need do this

@@ -10,6 +10,7 @@ import UIKit
 class PresetStructureController: UITableViewController {
     
     var mainController : MainController?
+    var presetStructureViewLogic : PresetStructureViewLogic?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,8 @@ class PresetStructureController: UITableViewController {
         popoverPresentationController?.delegate = self
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddPresetPartBtnPress))
+        
+        presetStructureViewLogic = PresetStructureViewLogic(self)
     }
     
     @objc func onAddPresetPartBtnPress()
@@ -45,7 +48,7 @@ class PresetStructureController: UITableViewController {
     }
     
     internal override func viewWillAppear(_ animated: Bool) {
-        mainController?.coreDataLogic.loadData()
+        presetStructureViewLogic!.updateCellArray()
         tableView.reloadData()
     }
     
@@ -58,16 +61,21 @@ class PresetStructureController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "presetStructureCell", for: indexPath) as! PresetStructureCell
-        var presetStructsElems = DataContainer.Instance.getElemsOfCurrentPreset()
-        presetStructsElems.sort(by: { $0.presetPartId < $1.presetPartId })
         
-        let bpm = presetStructsElems[indexPath.row].bpm
-        let count = presetStructsElems[indexPath.row].count
-        let size = presetStructsElems[indexPath.row].size1
-        
-        cell.bpmLabel.text = "BMM: \(bpm)"
-        cell.countLabel.text = "Count: \(count)"
-        cell.sizeLabel.text = "Size: \(size)"
+        if let safePSVL = presetStructureViewLogic
+        {
+            cell.presetStructureController = self
+            cell.indexPath = indexPath
+            cell.presetPartId = safePSVL.presetPartInfoArray[indexPath.row].id
+            
+            let bpm = safePSVL.presetPartInfoArray[indexPath.row].bpm
+            let count = safePSVL.presetPartInfoArray[indexPath.row].count
+            let size = safePSVL.presetPartInfoArray[indexPath.row].size_1
+            
+            cell.bpmLabel.text = "BMM: \(bpm)"
+            cell.countLabel.text = "Count: \(count)"
+            cell.sizeLabel.text = "Size: \(size)"
+        }
         return cell
     }
     

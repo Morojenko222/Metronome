@@ -43,7 +43,6 @@ class MainController: UIViewController {
         setupNoteButtons()
         setupBackToSButton()
         coreDataLogic.loadData()
-        //coreDataLogic.cleanAllData()
     }
     
     internal override func viewWillAppear(_ animated: Bool) {
@@ -215,5 +214,8 @@ class MainController: UIViewController {
     }
     @IBAction func backToStructBtnOnPress(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func testCleanDataOnPress(_ sender: UIButton) {
+        coreDataLogic.cleanAllData()
     }
 }

@@ -71,11 +71,6 @@ class PresetsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "presetCell", for: indexPath) as! PresetCell
 
-        /*
-        print("Here = \(indexPath.row)")
-        let presetsSet = DataContainer.Instance.getPresetsSet()
-        let presetsArray = presetsSet.sorted()
- */
         if let safePVL = presetViewLogic
         {
             cell.presetNameLabel.text = safePVL.presetInfoArray[indexPath.row].presetLabelText

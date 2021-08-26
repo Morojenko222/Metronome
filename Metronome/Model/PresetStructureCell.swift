@@ -13,17 +13,22 @@ class PresetStructureCell: UITableViewCell {
     @IBOutlet var sizeLabel: UILabel!
     @IBOutlet var countLabel: UILabel!
     
+    var indexPath : IndexPath?
+    var presetPartId = -1
+    var presetStructureController : PresetStructureController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    @IBAction func deletePresetStructureOnPress(_ sender: UIButton) {
+        if let presController = presetStructureController, let safeIndexPath = indexPath
+        {
+            presController.presetStructureViewLogic!.removePresetPart(presetPartId, safeIndexPath)
+        }
+    }
 }

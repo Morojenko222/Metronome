@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class PresetsViewController: UITableViewController {
+class PresetsViewController: UITableViewController
+{
     
     var mainController : MainController?
     var presetViewLogic : PresetViewLogic?
@@ -17,15 +19,20 @@ class PresetsViewController: UITableViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.dragDelegate = self
+        tableView.dropDelegate = self
+        tableView.dragInteractionEnabled = true
         tableView.register(UINib(nibName: "PresetCell", bundle: nil), forCellReuseIdentifier: "presetCell")
         tableView.rowHeight = 60.0
         tableView.separatorStyle = .none
-        
+        tableView.setEditing(true, animated: true)
+
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.isHidden = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddPresetBtnPress))
         
         presetViewLogic = PresetViewLogic(self)
+        
     }
     
     internal override func viewWillAppear(_ animated: Bool) {
@@ -89,5 +96,60 @@ class PresetsViewController: UITableViewController {
             DataContainer.Instance.pickedPresetId = safePVL.presetInfoArray[indexPath.row].presetId
             loadPresetStructureScreen()
         }
-    }    
+    }
+    
+    /*
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.none
+    }
+    
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        var infoArray = presetViewLogic?.presetInfoArray
+        let sourceElem = infoArray?[sourceIndexPath.row]
+        let destElem = infoArray?[destinationIndexPath.row]
+        
+        infoArray?[sourceIndexPath.row] = destElem!
+        infoArray?[destinationIndexPath.row] = sourceElem!
+        presetViewLogic?.presetInfoArray = infoArray!
+        print(infoArray)
+    }
+ */
+    
+    func moveItem(at sourceIndex: Int, to destinationIndex: Int) {
+        guard sourceIndex != destinationIndex else { return }
+        
+        if let safePVL = presetViewLogic
+        {
+            let place = safePVL.presetInfoArray[sourceIndex]
+            safePVL.presetInfoArray.remove(at: sourceIndex)
+            safePVL.presetInfoArray.insert(place, at: destinationIndex)
+        }
+    }
+    
+    func dragItems(for indexPath: IndexPath) -> [UIDragItem] {
+        if let safePVL = presetViewLogic
+        {
+            let preset = safePVL.presetInfoArray[indexPath.row]
+            let itemProvider = NSItemProvider()
+            itemProvider.registerDataRepresentation(forTypeIdentifier: kUTTypePlainText as String, visibility: .all) { completion in
+                
+                let data = preset.presetLabelText.data(using: .utf8)
+                completion(data, nil)
+                return nil
+            }
+            
+            let dragItem = UIDragItem(itemProvider: itemProvider)
+            return [dragItem]
+        }
+        
+        return []
+    }
+    
+    public func tableView(_ tableView: UITableView, canHandle session: UIDropSession) -> Bool {
+        return session.canLoadObjects(ofClass: NSString.self)
+    }
 }

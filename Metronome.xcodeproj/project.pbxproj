@@ -34,6 +34,7 @@
 		5ABCCE3726C3184400168E2D /* CoreDataLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCE3626C3184400168E2D /* CoreDataLogic.swift */; };
 		5ABCCE3A26CED5D200168E2D /* PresetViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCE3926CED5D200168E2D /* PresetViewLogic.swift */; };
 		5ABCCE3C26D5935100168E2D /* PresetStructureViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCE3B26D5935100168E2D /* PresetStructureViewLogic.swift */; };
+		5ABCCE3E26DB7BC000168E2D /* PresetViewController_DragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABCCE3D26DB7BC000168E2D /* PresetViewController_DragDrop.swift */; };
 		5ACE768A26B71A21000B9A79 /* PresetEditingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE768926B71A21000B9A79 /* PresetEditingLogic.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		5ABCCE3626C3184400168E2D /* CoreDataLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataLogic.swift; sourceTree = "<group>"; };
 		5ABCCE3926CED5D200168E2D /* PresetViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetViewLogic.swift; sourceTree = "<group>"; };
 		5ABCCE3B26D5935100168E2D /* PresetStructureViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetStructureViewLogic.swift; sourceTree = "<group>"; };
+		5ABCCE3D26DB7BC000168E2D /* PresetViewController_DragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetViewController_DragDrop.swift; sourceTree = "<group>"; };
 		5ACE768926B71A21000B9A79 /* PresetEditingLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetEditingLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 				5AA669BB268CFF9500CF4BF9 /* SizeViewController.swift */,
 				5AA669C92698EF1900CF4BF9 /* PresetsViewController.swift */,
 				5A498ED026A8C22A00F5B795 /* PresetStructureController.swift */,
+				5ABCCE3D26DB7BC000168E2D /* PresetViewController_DragDrop.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				5ABCCE3A26CED5D200168E2D /* PresetViewLogic.swift in Sources */,
 				5A5ED05D26A0055E0020F96C /* PresetCell.swift in Sources */,
 				5AA6699B2683B92600CF4BF9 /* SceneDelegate.swift in Sources */,
+				5ABCCE3E26DB7BC000168E2D /* PresetViewController_DragDrop.swift in Sources */,
 				5ABCCE3C26D5935100168E2D /* PresetStructureViewLogic.swift in Sources */,
 				5ABCCE3726C3184400168E2D /* CoreDataLogic.swift in Sources */,
 			);

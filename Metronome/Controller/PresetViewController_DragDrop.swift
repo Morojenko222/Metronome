@@ -11,9 +11,7 @@ import UIKit
 extension PresetsViewController : UITableViewDragDelegate
 {
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        
         return dragItems(for: indexPath)
-        
     }
 }
 
@@ -25,17 +23,11 @@ extension PresetsViewController : UITableViewDropDelegate
             let destinationIndexPath : IndexPath
             destinationIndexPath = indexPath
         
+            
             for item in coordinator.items {
                 if let sourceIndexPath = item.sourceIndexPath
                 {
                     moveItem(at: sourceIndexPath.row, to: destinationIndexPath.row)
-                    DispatchQueue.main.async {
-                        tableView.beginUpdates()
-                        tableView.deleteRows(at: [sourceIndexPath], with: .automatic)
-                        tableView.insertRows(at: [destinationIndexPath], with: .automatic)
-                        tableView.endUpdates()
-                    }
-                    
                     tableView.reloadData()
                 }
             }
@@ -43,6 +35,7 @@ extension PresetsViewController : UITableViewDropDelegate
     }
     
     func tableView(_ tableView: UITableView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UITableViewDropProposal {
+        
         if (tableView.hasActiveDrag)
         {
             if session.items.count > 1
@@ -51,11 +44,13 @@ extension PresetsViewController : UITableViewDropDelegate
             }
             else
             {
-                return UITableViewDropProposal(operation: .move)
+                //print("Moving")
+                return UITableViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
             }
         }
         
         return UITableViewDropProposal(operation: .cancel)
     }
+    
     
 }

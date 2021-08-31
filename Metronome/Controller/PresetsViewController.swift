@@ -98,26 +98,7 @@ class PresetsViewController: UITableViewController
         }
     }
     
-    /*
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return UITableViewCell.EditingStyle.none
-    }
-    
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        var infoArray = presetViewLogic?.presetInfoArray
-        let sourceElem = infoArray?[sourceIndexPath.row]
-        let destElem = infoArray?[destinationIndexPath.row]
-        
-        infoArray?[sourceIndexPath.row] = destElem!
-        infoArray?[destinationIndexPath.row] = sourceElem!
-        presetViewLogic?.presetInfoArray = infoArray!
-        print(infoArray)
-    }
- */
+    // MARK: - Drag and drop support
     
     func moveItem(at sourceIndex: Int, to destinationIndex: Int) {
         guard sourceIndex != destinationIndex else { return }

@@ -20,7 +20,6 @@ class PresetStructureController: UITableViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "PresetStructureCell", bundle: nil), forCellReuseIdentifier: "presetStructureCell")
         tableView.rowHeight = 60.0
-        popoverPresentationController?.delegate = self
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddPresetPartBtnPress))
         
@@ -133,12 +132,4 @@ class PresetStructureController: UITableViewController {
      */
 
     
-}
-
-extension PresetStructureController : UIPopoverPresentationControllerDelegate
-{
-    func popoverPresentationControllerDidDismissPopover(popoverPresentationController: UIPopoverPresentationController)
-    {
-        print("CHECK!!!")
-    }
 }

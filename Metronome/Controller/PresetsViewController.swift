@@ -25,7 +25,7 @@ class PresetsViewController: UITableViewController
         tableView.register(UINib(nibName: "PresetCell", bundle: nil), forCellReuseIdentifier: "presetCell")
         tableView.rowHeight = 60.0
         tableView.separatorStyle = .none
-        tableView.setEditing(true, animated: true)
+        //tableView.setEditing(true, animated: true)
 
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.isHidden = false

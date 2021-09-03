@@ -23,9 +23,32 @@ class PresetEditingLogic {
     {
         if let safeCoreData = _coreDataLogic
         {
+            let presetsArray = DataContainer.Instance.presetsArray
+            let presetId = DataContainer.Instance.pickedPresetId
+            let presetPartId = DataContainer.Instance.pickedPresetStructId
+            
+            // If preset part already exist
+            for (i, _) in presetsArray.enumerated()
+            {
+                if (presetsArray[i].presetId == presetId && presetsArray[i].presetPartId == presetPartId)
+                {
+                    presetsArray[i].bpm = Int32 (metronomeLogic.beepTime)
+                    presetsArray[i].size1 = Int32 (metronomeLogic.sizeHighStrokeNum)
+                    presetsArray[i].size2 = Int32 (4)
+                    presetsArray[i].count = Int32 (metronomeLogic.presetTactsCount)
+                    presetsArray[i].noteSizeDivider = Int32 (metronomeLogic.noteSizeDivider)
+                    
+                    DataContainer.Instance.presetsArray = presetsArray
+                    safeCoreData.saveData()
+                    return
+                }
+            }
+            
+            // If it's not exsist
+            
             let presetStructElem = PresetEntity(context: _context)
-            presetStructElem.presetId = Int32(DataContainer.Instance.pickedPresetId)
-            presetStructElem.presetPartId = Int32(DataContainer.Instance.pickedPresetStructId)
+            presetStructElem.presetId = Int32(presetId)
+            presetStructElem.presetPartId = Int32(presetPartId)
             presetStructElem.bpm = Int32 (metronomeLogic.beepTime)
             presetStructElem.size1 = Int32 (metronomeLogic.sizeHighStrokeNum)
             presetStructElem.size2 = Int32 (4)
@@ -76,4 +99,6 @@ class PresetEditingLogic {
             }
         }
     }
+    
+    
 }

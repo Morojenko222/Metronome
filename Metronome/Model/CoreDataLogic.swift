@@ -32,11 +32,15 @@ class CoreDataLogic {
 
         func loadData()
         {
-            let request : NSFetchRequest<PresetEntity> = PresetEntity.fetchRequest()
+            let requestPresetEntity : NSFetchRequest<PresetEntity> = PresetEntity.fetchRequest()
+            let requestPresetPosEntity : NSFetchRequest<PresetPosEntity> = PresetPosEntity.fetchRequest()
+            let requestPresetPartPosEntity : NSFetchRequest<PresetPartPosEntity> = PresetPartPosEntity.fetchRequest()
             
             do
             {
-                DataContainer.Instance.presetsArray = try _context.fetch(request)
+                DataContainer.Instance.presetsArray = try _context.fetch(requestPresetEntity)
+                DataContainer.Instance.presetPosInfoArray = try _context.fetch(requestPresetPosEntity)
+                DataContainer.Instance.presetPartPosInfoArray = try _context.fetch(requestPresetPartPosEntity)
             }
             catch
             {
@@ -47,6 +51,14 @@ class CoreDataLogic {
     func cleanAllData() {
         for preset in DataContainer.Instance.presetsArray {
             _context.delete(preset)
+        }
+        
+        for presetPos in DataContainer.Instance.presetPosInfoArray {
+            _context.delete(presetPos)
+        }
+        
+        for presetPartPos in DataContainer.Instance.presetPartPosInfoArray {
+            _context.delete(presetPartPos)
         }
         saveData()
         

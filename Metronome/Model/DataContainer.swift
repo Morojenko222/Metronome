@@ -15,6 +15,8 @@ class DataContainer {
     let sizeData_2 = [4, 8]
     
     var presetsArray : [PresetEntity] = []
+    var presetPosInfoArray : [PresetPosEntity] = []
+    var presetPartPosInfoArray : [PresetPartPosEntity] = []
     
     var pickedPresetId = 0
     var pickedPresetStructId = 0
@@ -68,8 +70,6 @@ class DataContainer {
         return presetParts
     }
     
-    
-    
     func getPresetsIdsSet () -> Set<Int> {
         var presetsSet = Set<Int>()
         for preset in presetsArray {
@@ -83,6 +83,7 @@ class DataContainer {
         let presetSet = getPresetsIdsSet ()
         return presetSet.count
     }
+    
     
     /*
     func cleanEmptyPresets ()

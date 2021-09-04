@@ -18,7 +18,6 @@ class PresetEditingLogic {
         _coreDataLogic = coreDataLogic
     }
 
-    // TODO: Make editing logic
     func updatePickedPresetPart (metronomeLogic : MetronomeLogic)
     {
         if let safeCoreData = _coreDataLogic
@@ -100,5 +99,102 @@ class PresetEditingLogic {
         }
     }
     
+    // MARK: Commands for positions info
     
+    func addOrUpdatePresetPartPosInfo ()
+    {
+        
+    }
+    
+    // MARK: CUD for presetPart
+    func addPartPosInfo(_ presetId : Int, _ presetPartId : Int) {
+        
+        if let safeCoreData = _coreDataLogic
+        {
+            var presetPartPosArray = DataContainer.Instance.presetPartPosInfoArray
+            presetPartPosArray.sort{$0.pos < $1.pos}
+            let presetPartPos = PresetPartPosEntity(context: _context)
+            presetPartPos.presetId = Int32(presetId)
+            presetPartPos.presetPartId = Int32(presetPartId)
+            
+            presetPartPosArray.append(presetPartPos)
+            DataContainer.Instance.presetPartPosInfoArray = presetPartPosArray
+            safeCoreData.saveData()
+        }
+        else
+        {
+            print("ERROR - _coreDataLogic == nil")
+        }
+    }
+    
+    func updatePartPosInfoByPos(_ presetId : Int, _ presetPartId : Int, _ pos : Int) {
+        if let safeCoreData = _coreDataLogic
+        {
+            let presetPartPosArray = DataContainer.Instance.presetPartPosInfoArray
+            
+            for (i, _) in presetPartPosArray.enumerated()
+            {
+                if (presetPartPosArray[i].pos == pos)
+                {
+                    presetPartPosArray[i].presetId = Int32(presetId)
+                    presetPartPosArray[i].presetPartId = Int32(presetPartId)
+                    break
+                }
+            }
+            
+            DataContainer.Instance.presetPartPosInfoArray = presetPartPosArray
+            safeCoreData.saveData()
+        }
+        else
+        {
+            print("ERROR - _coreDataLogic == nil")
+        }
+    }
+    
+    func deletePartPos(_ row : Int) {
+        if let safeCoreData = _coreDataLogic
+        {
+            var presetPartPosArray = DataContainer.Instance.presetPartPosInfoArray
+            presetPartPosArray.sort{$0.pos < $1.pos}
+            
+            for i in row ..< presetPartPosArray.count {
+                presetPartPosArray[i] = presetPartPosArray[i + 1]
+            }
+            
+            presetPartPosArray.remove(at: presetPartPosArray.count - 1)
+            
+            DataContainer.Instance.presetPartPosInfoArray = presetPartPosArray
+            safeCoreData.saveData()
+        }
+    }
+    
+    
+    
+    func isPresetPartPosInfoPersist(_ presetId : Int, _ presetPartId : Int) -> Bool {
+        let presetPartPosArray = DataContainer.Instance.presetPartPosInfoArray
+        let posArr = presetPartPosArray.filter{elem in
+            return (elem.presetId == presetId && elem.presetPartId == presetPartId)
+        }
+        
+        if (posArr.count > 0)
+        {
+            return true
+        }
+        
+        return false
+    }
+    
+    func isPresetPosInfoPersist(_ presetId : Int) -> Bool {
+        let presetPosArray = DataContainer.Instance.presetPosInfoArray
+        let posArr = presetPosArray.filter{elem in
+            return (elem.presetId == presetId)
+        }
+        
+        if (posArr.count > 0)
+        {
+            return true
+        }
+        
+        return false
+    }
 }

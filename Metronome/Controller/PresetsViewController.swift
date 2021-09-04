@@ -90,7 +90,7 @@ class PresetsViewController: UITableViewController
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+
         if let safePVL = presetViewLogic
         {
             DataContainer.Instance.pickedPresetId = safePVL.presetInfoArray[indexPath.row].presetId

@@ -210,6 +210,7 @@ class MainController: UIViewController {
     @IBAction func addPresetBtnOnPress(_ sender: UIButton) {
         presetEditingLogic.updatePickedPresetPart(metronomeLogic: metronomeLogic)
         coreDataLogic.saveData()
+        DataContainer.Instance.TEST_checkAllPosData()
         dismiss(animated: true, completion: nil)
     }
     @IBAction func backToStructBtnOnPress(_ sender: Any) {

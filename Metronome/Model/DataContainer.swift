@@ -102,4 +102,17 @@ class DataContainer {
     }
     */
     
+    func TEST_checkAllPosData()
+    {
+        print("presetPosInfoArray")
+        for elem in presetPosInfoArray {
+            print("PresetId = \(elem.presetId), pos = \(elem.pos)")
+        }
+        
+        print("presetPartPosInfoArray")
+        for elem in presetPartPosInfoArray {
+            print("PresetId = \(elem.presetId), PresetPartId = \(elem.presetPartId), pos = \(elem.pos)")
+        }
+    }
+    
 }

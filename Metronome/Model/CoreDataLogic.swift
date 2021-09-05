@@ -63,5 +63,7 @@ class CoreDataLogic {
         saveData()
         
         DataContainer.Instance.presetsArray.removeAll()
+        DataContainer.Instance.presetPosInfoArray.removeAll()
+        DataContainer.Instance.presetPartPosInfoArray.removeAll()
     }
 }

@@ -56,6 +56,9 @@ class PresetEditingLogic {
             
             DataContainer.Instance.presetsArray.append(presetStructElem)
             safeCoreData.saveData()
+            
+            addOrUpdatePresetPartPosInfo(presetId, presetPartId)
+            addOrUpdatePresetPosInfo(presetId)
         }
     }
     
@@ -101,9 +104,20 @@ class PresetEditingLogic {
     
     // MARK: Commands for positions info
     
+    func addOrUpdatePresetPosInfo (_ presetId : Int)
+    {
+        if (!isPresetPosInfoPersist(presetId))
+        {
+            addPresetPosInfo(presetId)
+        }
+    }
+    
     func addOrUpdatePresetPartPosInfo (_ presetId : Int, _ presetPartId : Int)
     {
-        
+        if (!isPresetPartPosInfoPersist(presetId, presetPartId))
+        {
+            addPartPosInfo(presetId, presetPartId)
+        }
     }
     
     // MARK: CUD for presetPart
@@ -112,10 +126,10 @@ class PresetEditingLogic {
         if let safeCoreData = _coreDataLogic
         {
             var presetPartPosArray = DataContainer.Instance.presetPartPosInfoArray
-            presetPartPosArray.sort{$0.pos < $1.pos}
+            let presetPartPosWithPresetIdArray = presetPartPosArray.filter{$0.presetId == presetId}
             
             let presetPartPos = PresetPartPosEntity(context: _context)
-            presetPartPos.pos = Int32(presetPartPosArray.count - 1)
+            presetPartPos.pos = Int32(presetPartPosWithPresetIdArray.count)
             presetPartPos.presetId = Int32(presetId)
             presetPartPos.presetPartId = Int32(presetPartId)
             presetPartPosArray.append(presetPartPos)
@@ -129,6 +143,7 @@ class PresetEditingLogic {
         }
     }
     
+    /*
     func updatePartPosInfoByPos(_ presetId : Int, _ presetPartId : Int, _ pos : Int) {
         if let safeCoreData = _coreDataLogic
         {
@@ -136,6 +151,7 @@ class PresetEditingLogic {
             
             for (i, _) in presetPartPosArray.enumerated()
             {
+                //AAAAAAAAA####AAAAAHHHHH
                 if (presetPartPosArray[i].pos == pos)
                 {
                     presetPartPosArray[i].presetId = Int32(presetId)
@@ -152,17 +168,20 @@ class PresetEditingLogic {
             print("ERROR - _coreDataLogic == nil")
         }
     }
+    */
     
-    func deletePartPos(_ row : Int) {
+    func deletePartPos(_ row : Int, _ presetId : Int) {
         if let safeCoreData = _coreDataLogic
         {
             var presetPartPosArray = DataContainer.Instance.presetPartPosInfoArray
+            presetPartPosArray = presetPartPosArray.filter({$0.presetId == presetId})
             presetPartPosArray.sort{$0.pos < $1.pos}
             
             for i in row ..< presetPartPosArray.count {
                 presetPartPosArray[i] = presetPartPosArray[i + 1]
             }
             
+            _context.delete(presetPartPosArray.last!)
             presetPartPosArray.remove(at: presetPartPosArray.count - 1)
             
             DataContainer.Instance.presetPartPosInfoArray = presetPartPosArray
@@ -170,17 +189,34 @@ class PresetEditingLogic {
         }
     }
     
+    func deleteAllPartPosByPresetId(_ presetId : Int) {
+        if let safeCoreData = _coreDataLogic
+        {
+            var presetPartPosArray = DataContainer.Instance.presetPartPosInfoArray
+            let deletionElems = presetPartPosArray.filter({$0.presetId == presetId})
+            
+            for elem in deletionElems {
+                _context.delete(elem)
+            }
+            
+            presetPartPosArray = presetPartPosArray.filter({$0.presetId != presetId})
+            DataContainer.Instance.presetPartPosInfoArray = presetPartPosArray
+            safeCoreData.saveData()
+        }
+    }
+    
+    
+    
     // MARK: CUD for preset
     func addPresetPosInfo(_ presetId : Int) {
         
         if let safeCoreData = _coreDataLogic
         {
             var presetPosArray = DataContainer.Instance.presetPosInfoArray
-            presetPosArray.sort{$0.pos < $1.pos}
             
             let presetPos = PresetPosEntity(context: _context)
             presetPos.presetId = Int32(presetId)
-            presetPos.pos = Int32(presetPosArray.count - 1)
+            presetPos.pos = Int32(presetPosArray.count)
             
             presetPosArray.append(presetPos)
             DataContainer.Instance.presetPosInfoArray = presetPosArray
@@ -192,6 +228,7 @@ class PresetEditingLogic {
         }
     }
     
+    /*
     func updatePresetPosInfoByPos(_ presetId : Int, _ pos : Int) {
         if let safeCoreData = _coreDataLogic
         {
@@ -214,20 +251,25 @@ class PresetEditingLogic {
             print("ERROR - _coreDataLogic == nil")
         }
     }
+ */
     
-    func deletePresetPos(_ row : Int) {
+    func deletePresetPosByRow(_ row : Int) {
         if let safeCoreData = _coreDataLogic
         {
             var presetPosArray = DataContainer.Instance.presetPosInfoArray
             presetPosArray.sort{$0.pos < $1.pos}
             
+            let presetId = Int(presetPosArray[row].presetId)
+            
             for i in row ..< presetPosArray.count {
                 presetPosArray[i] = presetPosArray[i + 1]
             }
             
+            _context.delete(presetPosArray.last!)
             presetPosArray.remove(at: presetPosArray.count - 1)
-            
             DataContainer.Instance.presetPosInfoArray = presetPosArray
+            deleteAllPartPosByPresetId(presetId)
+            
             safeCoreData.saveData()
         }
     }
@@ -260,5 +302,35 @@ class PresetEditingLogic {
         }
         
         return false
+    }
+    
+    func getPartPosById (_ presetId : Int, _ presetPartId : Int) -> Int
+    {
+        let presetPartPosArray = DataContainer.Instance.presetPartPosInfoArray
+        
+        for elem in presetPartPosArray {
+            if (elem.presetPartId == presetPartId && elem.presetId == presetId)
+            {
+                return Int(elem.pos)
+            }
+        }
+        
+        print("WARNING - Can't find preset part pos by id")
+        return 0
+    }
+    
+    func getPresetPosById (_ presetId : Int) -> Int
+    {
+        let presetPosArray = DataContainer.Instance.presetPosInfoArray
+        
+        for elem in presetPosArray {
+            if (elem.presetId == presetId)
+            {
+                return Int(elem.pos)
+            }
+        }
+        
+        print("WARNING - Can't find preset pos by id")
+        return 0
     }
 }

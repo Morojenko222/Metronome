@@ -229,6 +229,24 @@ class PresetEditingLogic {
         }
     }
     
+    func presetDragPoses(_ sourceInx : Int, _ destinationInx : Int) {
+        
+        if let safeCoreData = _coreDataLogic
+        {
+            var presetPoses = DataContainer.Instance.presetPosInfoArray
+            presetPoses.sort(by: {$0.pos < $1.pos})
+            let temp = presetPoses[sourceInx].presetId
+            presetPoses[sourceInx].presetId = presetPoses[destinationInx].presetId
+            presetPoses[destinationInx].presetId = temp
+            safeCoreData.saveData()
+        }
+        else
+        {
+            print("ERROR - _coreDataLogic == nil")
+        }
+        
+    }
+    
     /*
     func updatePresetPosInfoByPos(_ presetId : Int, _ pos : Int) {
         if let safeCoreData = _coreDataLogic

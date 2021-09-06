@@ -99,15 +99,16 @@ class PresetsViewController: UITableViewController
     }
     
     // MARK: - Drag and drop support
-    
+    // TODO: Move from controller to model
     func moveItem(at sourceIndex: Int, to destinationIndex: Int) {
         guard sourceIndex != destinationIndex else { return }
         
-        if let safePVL = presetViewLogic
+        if let safePVL = presetViewLogic, let mc = mainController
         {
             let place = safePVL.presetInfoArray[sourceIndex]
             safePVL.presetInfoArray.remove(at: sourceIndex)
             safePVL.presetInfoArray.insert(place, at: destinationIndex)
+            mc.presetEditingLogic!.presetDragPoses(sourceIndex, destinationIndex)
         }
     }
     

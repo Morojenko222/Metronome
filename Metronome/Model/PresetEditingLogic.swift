@@ -192,16 +192,17 @@ class PresetEditingLogic {
     func deleteAllPartPosByPresetId(_ presetId : Int) {
         if let safeCoreData = _coreDataLogic
         {
-            var presetPartPosArray = DataContainer.Instance.presetPartPosInfoArray
+            let presetPartPosArray = DataContainer.Instance.presetPartPosInfoArray
             let deletionElems = presetPartPosArray.filter({$0.presetId == presetId})
+            let newPartPosArray = presetPartPosArray.filter({$0.presetId != presetId})
             
             for elem in deletionElems {
                 _context.delete(elem)
             }
-            
-            presetPartPosArray = presetPartPosArray.filter({$0.presetId != presetId})
-            DataContainer.Instance.presetPartPosInfoArray = presetPartPosArray
             safeCoreData.saveData()
+            
+            DataContainer.Instance.presetPartPosInfoArray = newPartPosArray
+            
         }
     }
     
@@ -261,16 +262,19 @@ class PresetEditingLogic {
             
             let presetId = Int(presetPosArray[row].presetId)
             
-            for i in row ..< presetPosArray.count {
-                presetPosArray[i] = presetPosArray[i + 1]
+            for i in row ..< presetPosArray.count - 1 {
+                presetPosArray[i].pos = presetPosArray[i + 1].pos
+                presetPosArray[i].presetId = presetPosArray[i + 1].presetId
             }
             
             _context.delete(presetPosArray.last!)
+            safeCoreData.saveData()
+            
             presetPosArray.remove(at: presetPosArray.count - 1)
             DataContainer.Instance.presetPosInfoArray = presetPosArray
             deleteAllPartPosByPresetId(presetId)
             
-            safeCoreData.saveData()
+            DataContainer.Instance.TEST_checkAllPosData()
         }
     }
     

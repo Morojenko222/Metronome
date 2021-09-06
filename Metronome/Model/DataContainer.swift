@@ -84,6 +84,17 @@ class DataContainer {
         return presetSet.count
     }
     
+    func getPresetIdByPos (_ pos : Int) -> Int
+    {
+        let presetElem = presetPosInfoArray.filter({$0.pos == pos})[0]
+        return Int(presetElem.presetId)
+    }
+    
+    func getPresetPosById (_ id : Int) -> Int
+    {
+        let presetElem = presetPosInfoArray.filter({$0.presetId == id})[0]
+        return Int(presetElem.pos)
+    }
     
     /*
     func cleanEmptyPresets ()

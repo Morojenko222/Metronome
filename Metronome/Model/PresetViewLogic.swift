@@ -18,13 +18,14 @@ class PresetViewLogic
     
     func updateCellArray ()
     {
-        let presetsSet = DataContainer.Instance.getPresetsIdsSet()
-        let presetsArray = presetsSet.sorted()
-        
+        var presetsRowInfo = DataContainer.Instance.presetPosInfoArray
+        presetsRowInfo.sort(by: {$0.pos < $1.pos})
+
         presetInfoArray.removeAll()
-        for elem in presetsArray {
-            let presetNameText = String("Preset \(elem)")
-            let cellElem = Preset(presetId: elem, presetLabelText: presetNameText)
+        
+        for elem in presetsRowInfo {
+            let presetNameText = String("Preset \(elem.presetId)")
+            let cellElem = Preset(presetId: Int(elem.presetId), presetLabelText: presetNameText)
             presetInfoArray.append(cellElem)
         }
     }
@@ -38,15 +39,14 @@ class PresetViewLogic
                 {
                     presetInfoArray.remove(at: i)
                     mc.presetEditingLogic.deletePresetById(removingPresetId)
+                    mc.presetEditingLogic.deletePresetPosByRow(i)
 
                     break
                 }
             }
-            
-            //_presetViewController.tableView.deleteRows(at: [indexPath], with: .automatic)
+
             updateCellArray ()
             _presetViewController.tableView.reloadData()
-            //_presetViewController.tableView.reloadData()
         }
     }
     

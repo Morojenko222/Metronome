@@ -32,6 +32,13 @@ class MetronomeLogic
         playerLowSound = getAudioPlayer(soundName: "met2", soundExt: "wav")
     }
     
+    func setMetronomeValues (beepTime bp : Int, noteSizeDivider sd : Int, count cnt : Int, size1 size_1 : Int, size2 size_2 : Int)
+    {
+        beepTime = bp
+        noteSizeDivider = sd
+        sizeHighStrokeNum = size_1
+    }
+    
     private func getAudioPlayer (soundName : String, soundExt : String) -> AVAudioPlayer
     {
         let soundUrl = Bundle.main.url(forResource: soundName, withExtension: soundExt)

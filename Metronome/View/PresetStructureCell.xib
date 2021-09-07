@@ -60,23 +60,54 @@
                             <constraint firstAttribute="width" constant="60" id="wRD-YC-cow"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icO-f8-IIV">
-                        <rect key="frame" x="107" y="12" width="153" height="21"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sba-PC-egQ" userLabel="PlayBtnView">
+                        <rect key="frame" x="200" y="0.0" width="60" height="44"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playBtn" translatesAutoresizingMaskIntoConstraints="NO" id="Za8-Pp-XDu" userLabel="PlayBtnBack">
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="44"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRp-wv-jWU" userLabel="PlayBtn" customClass="TempoBtns" customModule="Metronome" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="60" height="44"/>
+                                <connections>
+                                    <action selector="playBtnOnPress:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rqd-0h-Mfi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Za8-Pp-XDu" firstAttribute="top" secondItem="sba-PC-egQ" secondAttribute="top" id="890-Bp-6QE"/>
+                            <constraint firstItem="cRp-wv-jWU" firstAttribute="leading" secondItem="sba-PC-egQ" secondAttribute="leading" id="95A-I5-63R"/>
+                            <constraint firstAttribute="trailing" secondItem="Za8-Pp-XDu" secondAttribute="trailing" id="IWG-7W-7A0"/>
+                            <constraint firstAttribute="bottom" secondItem="cRp-wv-jWU" secondAttribute="bottom" id="TZQ-WF-KHF"/>
+                            <constraint firstItem="cRp-wv-jWU" firstAttribute="top" secondItem="sba-PC-egQ" secondAttribute="top" id="Tsd-AL-Mac"/>
+                            <constraint firstItem="Za8-Pp-XDu" firstAttribute="leading" secondItem="sba-PC-egQ" secondAttribute="leading" id="YXg-yg-WBv"/>
+                            <constraint firstAttribute="width" constant="60" id="fM7-rg-GEQ"/>
+                            <constraint firstAttribute="bottom" secondItem="Za8-Pp-XDu" secondAttribute="bottom" id="lYw-fo-aXP"/>
+                            <constraint firstAttribute="trailing" secondItem="cRp-wv-jWU" secondAttribute="trailing" id="qdf-EG-bxZ"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icO-f8-IIV">
+                        <rect key="frame" x="107" y="12" width="100" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="VQT-nZ-AMP"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="uCF-L6-EwE" firstAttribute="leading" secondItem="icO-f8-IIV" secondAttribute="trailing" id="0PN-TD-z8A"/>
+                    <constraint firstItem="uCF-L6-EwE" firstAttribute="leading" secondItem="sba-PC-egQ" secondAttribute="trailing" id="0PN-TD-z8A"/>
                     <constraint firstAttribute="trailing" secondItem="bu6-HG-ek2" secondAttribute="trailing" constant="221" id="EFG-Zj-T6C"/>
                     <constraint firstAttribute="trailing" secondItem="uCF-L6-EwE" secondAttribute="trailing" id="Exn-VJ-QPU"/>
                     <constraint firstItem="LPQ-Ds-ipT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="F81-Mv-IWm"/>
                     <constraint firstAttribute="trailing" secondItem="LPQ-Ds-ipT" secondAttribute="trailing" constant="198" id="I2P-nu-jrL"/>
                     <constraint firstAttribute="bottom" secondItem="uCF-L6-EwE" secondAttribute="bottom" id="J3L-fo-SX2"/>
                     <constraint firstAttribute="bottom" secondItem="icO-f8-IIV" secondAttribute="bottom" constant="11" id="PoG-sP-0qr"/>
+                    <constraint firstItem="icO-f8-IIV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="107" id="UPU-zH-IiD"/>
+                    <constraint firstItem="sba-PC-egQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Wo4-of-gG2"/>
                     <constraint firstItem="LPQ-Ds-ipT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bmC-A6-qqY"/>
                     <constraint firstAttribute="bottom" secondItem="bu6-HG-ek2" secondAttribute="bottom" id="dAx-2p-Xl7"/>
+                    <constraint firstAttribute="bottom" secondItem="sba-PC-egQ" secondAttribute="bottom" id="gUY-lF-2S2"/>
                     <constraint firstItem="icO-f8-IIV" firstAttribute="leading" secondItem="bu6-HG-ek2" secondAttribute="trailing" constant="8" id="kea-Ls-uKy"/>
                     <constraint firstItem="icO-f8-IIV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="swb-rB-JHT"/>
                     <constraint firstItem="uCF-L6-EwE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tnK-DT-OQK"/>
@@ -87,12 +118,14 @@
             <connections>
                 <outlet property="bpmLabel" destination="LPQ-Ds-ipT" id="Nzt-k2-n2a"/>
                 <outlet property="countLabel" destination="icO-f8-IIV" id="llL-SF-Xl0"/>
+                <outlet property="playBtnBack" destination="Za8-Pp-XDu" id="yS8-5f-QbI"/>
                 <outlet property="sizeLabel" destination="bu6-HG-ek2" id="tpt-bq-v5k"/>
             </connections>
             <point key="canvasLocation" x="34.782608695652179" y="-5.3571428571428568"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="playBtn" width="980" height="980"/>
         <image name="tempoBtn" width="170.5" height="170.5"/>
     </resources>
 </document>

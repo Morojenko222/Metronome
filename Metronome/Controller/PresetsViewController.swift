@@ -40,6 +40,10 @@ class PresetsViewController: UITableViewController
         tableView.reloadData()
     }
     
+    internal override func viewWillDisappear(_ animated: Bool) {
+        mainController?.metronomeLogic.stopMetronome()
+    }
+    
     @objc func onAddPresetBtnPress()
     {
         if let safePVL = presetViewLogic

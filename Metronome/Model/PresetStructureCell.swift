@@ -12,6 +12,7 @@ class PresetStructureCell: UITableViewCell {
     @IBOutlet var bpmLabel: UILabel!
     @IBOutlet var sizeLabel: UILabel!
     @IBOutlet var countLabel: UILabel!
+    @IBOutlet var playBtnBack: UIImageView!
     
     var indexPath : IndexPath?
     var presetPartId = -1
@@ -29,6 +30,12 @@ class PresetStructureCell: UITableViewCell {
         if let presController = presetStructureController, let safeIndexPath = indexPath
         {
             presController.presetStructureViewLogic!.removePresetPart(presetPartId, safeIndexPath)
+        }
+    }
+    @IBAction func playBtnOnPress(_ sender: UIButton) {
+        if let presController = presetStructureController, let ip = indexPath
+        {
+            presController.playBtnHandler(ip)
         }
     }
 }

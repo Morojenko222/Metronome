@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 class PresetStructureViewLogic
 {
     private var _presetStructureController : PresetStructureController
     var presetPartInfoArray : [PresetPart] = []
+    var presetPartCellArray : [PresetStructureCell] = []
+    var playingPartInx = -1
     
     init(_ presetStructVC : PresetStructureController) {
         _presetStructureController = presetStructVC
@@ -35,6 +38,7 @@ class PresetStructureViewLogic
                 }
             }
 
+            stopPlaying()
             updateCellArray ()
             _presetStructureController.tableView.reloadData()
         }
@@ -62,5 +66,49 @@ class PresetStructureViewLogic
         {
             return 0
         }
+    }
+    
+    func playPart (_ indexPath : IndexPath)
+    {
+        let ml = _presetStructureController.mainController!.metronomeLogic
+        
+        if (playingPartInx == indexPath.row)
+        {
+            stopPlaying()
+            return
+        }
+        
+        let presetElem = presetPartInfoArray[indexPath.row]
+        let bpm = presetElem.bpm
+        let divider = presetElem.noteSizeDivider
+        let count = presetElem.count
+        let size1 = presetElem.size_1
+        let size2 = presetElem.size_2
+        
+        ml.setMetronomeValues(beepTime: bpm, noteSizeDivider: divider, count: count, size1: size1, size2: size2)
+        ml.startMetronome()
+        playingPartInx = indexPath.row
+        updatePlayPicture()
+        
+    }
+    
+    func stopPlaying() {
+        let ml = _presetStructureController.mainController!.metronomeLogic
+        ml.stopMetronome()
+        playingPartInx = -1
+        updatePlayPicture()
+    }
+    
+    func updatePlayPicture() {
+        for elem in presetPartCellArray {
+            elem.playBtnBack.image = UIImage(named: "playBtn")
+        }
+        
+        if (playingPartInx == -1)
+        {
+            return
+        }
+        
+        presetPartCellArray[playingPartInx].playBtnBack.image = UIImage(named: "pauseBtn")
     }
 }

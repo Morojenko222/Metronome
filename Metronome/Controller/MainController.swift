@@ -37,6 +37,7 @@ class MainController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tempoLabel.text = String(metronomeLogic.INIT_TEMPO)
+        tactsCountLabel.text = "Count: 1"
         presetEditingLogic = PresetEditingLogic(UIApplication.shared.delegate as! AppDelegate, coreDataLogic)
         initController ()
         setupGestures()
@@ -204,7 +205,8 @@ class MainController: UIViewController {
                 metronomeLogic.changePresetTactsCount(1)
             }
             
-            tactsCountLabel.text = String(metronomeLogic.presetTactsCount)
+            tactsCountLabel.text = String("Count: \(metronomeLogic.presetTactsCount)")
+            
         }
     }
     @IBAction func addPresetBtnOnPress(_ sender: UIButton) {

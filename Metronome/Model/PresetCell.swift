@@ -10,7 +10,8 @@ import UIKit
 class PresetCell: UITableViewCell {
 
     @IBOutlet var presetNameLabel: UILabel!
-
+    @IBOutlet var playBtnImg: UIImageView!
+    
     var indexPath : IndexPath?
     var presetId = -1
     var presetViewController : PresetsViewController?
@@ -23,6 +24,13 @@ class PresetCell: UITableViewCell {
         if let presController = presetViewController, let safeIndexPath = indexPath
         {
             presController.presetViewLogic!.removePreset(presetId, safeIndexPath)
+        }
+    }
+    
+    @IBAction func playBtnOnPress(_ sender: UIButton) {
+        if let presController = presetViewController, let ip = indexPath
+        {
+            presController.playBtnHandler(ip)
         }
     }
 }

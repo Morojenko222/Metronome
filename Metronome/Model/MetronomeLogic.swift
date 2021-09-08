@@ -27,6 +27,11 @@ class MetronomeLogic
     var playerHighSound : AVAudioPlayer!
     var playerLowSound : AVAudioPlayer!
     
+    var onHighStrokeProtocol : OnHighStrokeProtocol?
+    
+    
+    private var notFirstHighStroke = false
+    
     init() {
         playerHighSound = getAudioPlayer(soundName: "met1", soundExt: "wav")
         playerLowSound = getAudioPlayer(soundName: "met2", soundExt: "wav")
@@ -62,8 +67,8 @@ class MetronomeLogic
     {
         timer.invalidate()
         playSound ()
-        updateTimer()
         timerStarted = true
+        updateTimer()
     }
     
     func stopMetronome ()
@@ -71,6 +76,7 @@ class MetronomeLogic
         timer.invalidate()
         currentStrokeNum = 0
         timerStarted = false
+        notFirstHighStroke = false
     }
     
     private func updateTimer ()
@@ -78,6 +84,10 @@ class MetronomeLogic
         highStrokeNum = sizeHighStrokeNum * noteSizeDivider
         let interval = 60.0 / (Double(beepTime) * Double(noteSizeDivider))
         timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval), repeats: false, block: { Timer in
+            if (!self.timerStarted)
+            {
+                return
+            }
             self.playSound ()
             self.updateTimer()
         })
@@ -95,6 +105,15 @@ class MetronomeLogic
         if (currentStrokeNum == 0)
         {
             currPlayer = playerHighSound
+            
+            if (notFirstHighStroke)
+            {
+                onHighStrokeProtocol?.onHighStroke()
+            }
+            else
+            {
+                notFirstHighStroke = true
+            }
         }
         else
         {
@@ -126,4 +145,8 @@ class MetronomeLogic
         let summ = presetTactsCount + change
         presetTactsCount = summ > 1 ? summ : 1
     }
+}
+
+protocol OnHighStrokeProtocol {
+    func onHighStroke()
 }

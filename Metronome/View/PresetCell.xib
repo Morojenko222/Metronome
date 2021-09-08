@@ -26,14 +26,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9E1-DD-rsq" userLabel="DeleteBtnView">
-                        <rect key="frame" x="160" y="0.0" width="60" height="20"/>
+                        <rect key="frame" x="180" y="3" width="40" height="14"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempoBtn" translatesAutoresizingMaskIntoConstraints="NO" id="24k-Bk-vbs" userLabel="DeleteBtnBack">
-                                <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pngfind.com-trash-can-png-578431" translatesAutoresizingMaskIntoConstraints="NO" id="24k-Bk-vbs" userLabel="DeleteBtnBack">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="14"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waY-d0-4ay" userLabel="DeleteBtn" customClass="TempoBtns" customModule="Metronome" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
-                                <state key="normal" title="Delete"/>
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="14"/>
                                 <connections>
                                     <action selector="deleteBtnOnPress:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Mg2-Kx-g6J"/>
                                 </connections>
@@ -45,30 +44,60 @@
                             <constraint firstAttribute="trailing" secondItem="24k-Bk-vbs" secondAttribute="trailing" id="OCG-Tx-iIc"/>
                             <constraint firstItem="waY-d0-4ay" firstAttribute="leading" secondItem="9E1-DD-rsq" secondAttribute="leading" id="aLV-OY-3a7"/>
                             <constraint firstAttribute="bottom" secondItem="24k-Bk-vbs" secondAttribute="bottom" id="d5w-LL-OQ8"/>
-                            <constraint firstAttribute="width" constant="60" id="kfg-Po-9JR"/>
+                            <constraint firstAttribute="width" constant="40" id="kfg-Po-9JR"/>
                             <constraint firstAttribute="trailing" secondItem="waY-d0-4ay" secondAttribute="trailing" id="u4x-dc-Oha"/>
                             <constraint firstAttribute="bottom" secondItem="waY-d0-4ay" secondAttribute="bottom" id="uNn-ZQ-scB"/>
                             <constraint firstItem="24k-Bk-vbs" firstAttribute="top" secondItem="9E1-DD-rsq" secondAttribute="top" id="ziA-0r-Z97"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HR7-3b-HLa" userLabel="PlayBtnView">
+                        <rect key="frame" x="140" y="3" width="40" height="14"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playBtn" translatesAutoresizingMaskIntoConstraints="NO" id="ue1-HE-bWO" userLabel="PlayBtnBack">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="14"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Diu-0P-akA" userLabel="PlayBtn" customClass="TempoBtns" customModule="Metronome" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="14"/>
+                                <connections>
+                                    <action selector="playBtnOnPress:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="soI-4z-HBE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ue1-HE-bWO" firstAttribute="leading" secondItem="HR7-3b-HLa" secondAttribute="leading" id="8VQ-fg-ce6"/>
+                            <constraint firstItem="ue1-HE-bWO" firstAttribute="top" secondItem="HR7-3b-HLa" secondAttribute="top" id="GDG-Te-O8f"/>
+                            <constraint firstAttribute="bottom" secondItem="ue1-HE-bWO" secondAttribute="bottom" id="MMN-k6-5vx"/>
+                            <constraint firstAttribute="trailing" secondItem="Diu-0P-akA" secondAttribute="trailing" id="Y6c-9v-mRp"/>
+                            <constraint firstAttribute="width" constant="40" id="d4a-jq-guU"/>
+                            <constraint firstAttribute="bottom" secondItem="Diu-0P-akA" secondAttribute="bottom" id="eEb-ah-MN9"/>
+                            <constraint firstItem="Diu-0P-akA" firstAttribute="leading" secondItem="HR7-3b-HLa" secondAttribute="leading" id="fv0-EH-clu"/>
+                            <constraint firstItem="Diu-0P-akA" firstAttribute="top" secondItem="HR7-3b-HLa" secondAttribute="top" id="qPZ-dG-vcS"/>
+                            <constraint firstAttribute="trailing" secondItem="ue1-HE-bWO" secondAttribute="trailing" id="wUZ-UO-glk"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="9E1-DD-rsq" firstAttribute="leading" secondItem="HR7-3b-HLa" secondAttribute="trailing" id="7uo-k9-ot0"/>
                     <constraint firstAttribute="bottom" secondItem="NyI-5x-eQV" secondAttribute="bottom" constant="9" id="EhK-88-pap"/>
-                    <constraint firstAttribute="bottom" secondItem="9E1-DD-rsq" secondAttribute="bottom" id="FWM-Gq-JWw"/>
-                    <constraint firstItem="9E1-DD-rsq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="K0c-rc-fff"/>
+                    <constraint firstAttribute="bottom" secondItem="9E1-DD-rsq" secondAttribute="bottom" constant="3" id="FWM-Gq-JWw"/>
+                    <constraint firstItem="9E1-DD-rsq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="K0c-rc-fff"/>
+                    <constraint firstAttribute="bottom" secondItem="HR7-3b-HLa" secondAttribute="bottom" constant="3" id="SzW-tX-7m3"/>
                     <constraint firstAttribute="trailing" secondItem="9E1-DD-rsq" secondAttribute="trailing" id="azY-4V-6rb"/>
                     <constraint firstItem="NyI-5x-eQV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="kbV-yt-fuf"/>
+                    <constraint firstItem="HR7-3b-HLa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="sIJ-tb-Nch"/>
                     <constraint firstItem="NyI-5x-eQV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="uVp-NB-ENS"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="playBtnImg" destination="ue1-HE-bWO" id="Gbb-ce-Mgt"/>
                 <outlet property="presetNameLabel" destination="NyI-5x-eQV" id="Df5-dm-W5g"/>
             </connections>
             <point key="canvasLocation" x="-30.434782608695656" y="44.866071428571423"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="tempoBtn" width="170.5" height="170.5"/>
+        <image name="playBtn" width="980" height="980"/>
+        <image name="pngfind.com-trash-can-png-578431" width="922" height="980"/>
     </resources>
 </document>

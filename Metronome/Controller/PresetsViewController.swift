@@ -48,6 +48,7 @@ class PresetsViewController: UITableViewController
     {
         if let safePVL = presetViewLogic
         {
+            
             let newPresetId = safePVL.getFreeIdForNewPreset()
             DataContainer.Instance.pickedPresetId = newPresetId
             loadPresetStructureScreen()
@@ -70,6 +71,11 @@ class PresetsViewController: UITableViewController
             safeNavC.pushViewController(presetsEditVC, animated: true)
         }
     }
+    
+    func playBtnHandler (_ indexPath : IndexPath)
+    {
+        presetViewLogic?.playPart(indexPath)
+    }
 
     // MARK: - Table view data source
 
@@ -84,10 +90,16 @@ class PresetsViewController: UITableViewController
 
         if let safePVL = presetViewLogic
         {
+            if (indexPath.row == 0)
+            {
+                safePVL.presetCellArray.removeAll()
+            }
+            
             cell.presetNameLabel.text = safePVL.presetInfoArray[indexPath.row].presetLabelText
             cell.presetId = safePVL.presetInfoArray[indexPath.row].presetId
             cell.presetViewController = self
             cell.indexPath = indexPath
+            safePVL.presetCellArray.append(cell)
         }
         return cell
     }

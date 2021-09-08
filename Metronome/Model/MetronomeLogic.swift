@@ -20,7 +20,7 @@ class MetronomeLogic
     
     var needToUpdateTimer = false
     var timerStarted = false
-    var currentStrokeNum = 0
+    private var currentStrokeNum = 0
     
     var presetTactsCount = 1
     
@@ -66,6 +66,7 @@ class MetronomeLogic
     func startMetronome ()
     {
         timer.invalidate()
+        currentStrokeNum = 0
         playSound ()
         timerStarted = true
         updateTimer()

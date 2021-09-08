@@ -41,7 +41,8 @@ class PresetsViewController: UITableViewController
     }
     
     internal override func viewWillDisappear(_ animated: Bool) {
-        mainController?.metronomeLogic.stopMetronome()
+        //mainController?.metronomeLogic.stopMetronome()
+        presetViewLogic!.stopPlaying()
     }
     
     @objc func onAddPresetBtnPress()

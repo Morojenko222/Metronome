@@ -16,6 +16,7 @@ class SizeViewController: UIViewController {
     var activeData = [Int]()
     var metronomeLogic : MetronomeLogic?
     var sizeName = ""
+    var mainController : MainController?
     private let dataContainer = DataContainer.Instance
     
     override func viewDidLoad() {
@@ -52,6 +53,12 @@ extension SizeViewController : UITableViewDelegate
         {
             metronomeLogic?.sizeHighStrokeNum = activeData[indexPath.row]
         }
+        else
+        {
+            metronomeLogic?.size_2Val = activeData[indexPath.row]
+        }
+        
+        mainController?.updateSizesView()
         dismiss(animated: true)
     }
 }

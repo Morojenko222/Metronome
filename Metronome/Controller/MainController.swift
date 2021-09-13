@@ -10,7 +10,6 @@ import AVFoundation
 
 class MainController: UIViewController {
     
-    //private var player: AVAudioPlayer
     let metronomeLogic = MetronomeLogic()
     var presetEditingLogic : PresetEditingLogic!
     let coreDataLogic = CoreDataLogic(UIApplication.shared.delegate as! AppDelegate)
@@ -29,8 +28,11 @@ class MainController: UIViewController {
     @IBOutlet var minusTactBtn: TempoBtns!
     @IBOutlet var addPresetBtn: TempoBtns!
     @IBOutlet var bottomContainer: UIView!
+    @IBOutlet var notesBlock: UIView!
+    @IBOutlet var testCleanDataBtn: UIButton!
+    @IBOutlet var playBack: UIImageView!
     
-    
+    private let testMode = false
     private var notesBtns : [ButtonWithParam]?
     var inPresetMode = false
 
@@ -44,6 +46,15 @@ class MainController: UIViewController {
         setupNoteButtons()
         setupBackToSButton()
         coreDataLogic.loadData()
+        
+        sizeBtn.setTitle(String(metronomeLogic.sizeHighStrokeNum), for: UIControl.State.normal)
+        size_2Btn.setTitle(String(metronomeLogic.size_2Val), for: UIControl.State.normal)
+        
+        if (!testMode)
+        {
+            notesBlock.isHidden = true
+            testCleanDataBtn.isHidden = true
+        }
     }
     
     internal override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +65,8 @@ class MainController: UIViewController {
         toPresetViewBtn.isHidden = inPresetMode
         bottomContainer.isHidden = !inPresetMode
         backToPresetSBtn.isHidden = !inPresetMode
+        
+        updatePlayBtnVisual()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -143,6 +156,7 @@ class MainController: UIViewController {
         }
         
         sizeVC_Casted.sizeName = sender.strParam
+        sizeVC_Casted.mainController = self
         self.present(sizeVC_Casted, animated: true)
     }
     
@@ -151,9 +165,29 @@ class MainController: UIViewController {
         tempoLabel.text = String(metronomeLogic.beepTime)
     }
     
+    public func updateSizesView ()
+    {
+        sizeBtn.setTitle(String(metronomeLogic.sizeHighStrokeNum), for: UIControl.State.normal)
+        size_2Btn.setTitle(String(metronomeLogic.size_2Val), for: UIControl.State.normal)
+    }
+    
+    private func updatePlayBtnVisual ()
+    {
+        let timerStarted = metronomeLogic.timerStarted
+        if (timerStarted)
+        {
+            playBack.image = UIImage(named: "PlayPressed")
+        }
+        else
+        {
+            playBack.image = UIImage(named: "PlayNorm")
+        }
+    }
+    
     @IBAction func onStartBtnPress(_ sender: UIButton)
     {
         metronomeLogic.startMetronomeHandler()
+        updatePlayBtnVisual()
     }
     
     @IBAction func onTempoBtnPress(_ sender: TempoBtns) {

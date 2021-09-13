@@ -12,6 +12,7 @@ class MetronomeLogic
 {
     let INIT_TEMPO = 60
     var sizeHighStrokeNum = 4
+    var size_2Val = 4
     var highStrokeNum = 4
     
     var timer = Timer()
@@ -42,6 +43,7 @@ class MetronomeLogic
         beepTime = bp
         noteSizeDivider = sd
         sizeHighStrokeNum = size_1
+        size_2Val = size_2
     }
     
     private func getAudioPlayer (soundName : String, soundExt : String) -> AVAudioPlayer
